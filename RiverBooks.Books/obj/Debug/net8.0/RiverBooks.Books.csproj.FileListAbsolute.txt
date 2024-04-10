@@ -1,0 +1,12 @@
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\bin\Debug\net8.0\RiverBooks.Books.deps.json
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\bin\Debug\net8.0\RiverBooks.Books.dll
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\bin\Debug\net8.0\RiverBooks.Books.pdb
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\obj\Debug\net8.0\RiverBooks.Books.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\obj\Debug\net8.0\RiverBooks.Books.AssemblyInfoInputs.cache
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\obj\Debug\net8.0\RiverBooks.Books.AssemblyInfo.cs
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\obj\Debug\net8.0\RiverBooks.Books.csproj.CoreCompileInputs.cache
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\obj\Debug\net8.0\RiverBooks.Books.dll
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\obj\Debug\net8.0\refint\RiverBooks.Books.dll
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\obj\Debug\net8.0\RiverBooks.Books.pdb
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\obj\Debug\net8.0\ref\RiverBooks.Books.dll
+C:\Users\gusfl\RiderProjects\ardalis-modular\src\RiverBooks.Books\obj\Debug\net8.0\RiverBooks.Books.csproj.AssemblyReference.cache

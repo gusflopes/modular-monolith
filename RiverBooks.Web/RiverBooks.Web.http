@@ -1,0 +1,10 @@
+@RiverBooks.Web_HostAddress = http://localhost:5245
+
+GET {{RiverBooks.Web_HostAddress}}/books/
+Accept: application/json
+###
+
+GET {{RiverBooks.Web_HostAddress}}/api/books/
+Accept: application/json
+###
+
