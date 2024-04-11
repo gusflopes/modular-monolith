@@ -1,4 +1,9 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;PhysicalFolder Path="C:\Users\gusfl\RiderProjects\ardalis-modular" Loaded="True" /&gt;&#xD;
-&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=857e6b1b_002D44b9_002D4023_002Dafe2_002D1f4776d42b2d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ReturnThreeBooksAsync" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::7E55EEAA-7EDA-45D9-B7D3-F84DCACD1237::net8.0::RiverBooks.Books.Tests.Endpoints.BookList.ReturnThreeBooksAsync&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
