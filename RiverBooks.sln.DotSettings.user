@@ -5,5 +5,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=857e6b1b_002D44b9_002D4023_002Dafe2_002D1f4776d42b2d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ReturnThreeBooksAsync" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::7E55EEAA-7EDA-45D9-B7D3-F84DCACD1237::net8.0::RiverBooks.Books.Tests.Endpoints.BookList.ReturnThreeBooksAsync&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::7E55EEAA-7EDA-45D9-B7D3-F84DCACD1237::net8.0::RiverBooks.Books.Tests.Endpoints.BookGetById.ReturnsExptectedBookGivenIdAsync&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

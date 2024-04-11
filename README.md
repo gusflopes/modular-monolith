@@ -8,3 +8,8 @@ dotnet ef database update
 
 
 Remover <InvariantGlobalization>true</InvariantGlobalization> do arquivo .csproj do projeto RiverBooks.Web
+
+
+
+## Atualizar o ambiente
+dotnet ef database update -- --environment Testing
