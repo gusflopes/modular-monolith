@@ -1,4 +1,4 @@
-@RiverBooks.Web_HostAddress = http://localhost:5245
+@RiverBooks.Web_HostAddress = https://localhost:7149
 
 GET {{RiverBooks.Web_HostAddress}}/api/books/
 Accept: application/json
@@ -35,3 +35,27 @@ DELETE {{RiverBooks.Web_HostAddress}}/api/books/593c39f7-851e-41db-b664-29976f26
 Accept: application/json
 
 ###
+
+POST {{RiverBooks.Web_HostAddress}}/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Email": "gusflopes@hublaw.com.br",
+  "Password": "Pass@word1"
+}
+
+###
+
+POST {{RiverBooks.Web_HostAddress}}/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Email": "gusflopes@hublaw.com.br",
+  "Password": "Pass@word1"
+}
+
+###
+
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJndXNmbG9wZXNAaHVibGF3LmNvbS5iciIsImlzcyI6IlJpdmVyQm9va3MiLCJpYXQiOjE3MTI4MDc3NTYsImV4cCI6MTcxMjgxMTM1NiwibmJmIjoxNzEyODA3NzU2fQ.yveKs7Xn2MFyDv7yQmQnqAA-CvGl3gbP5ekjHNT4k88
