@@ -1,10 +1,37 @@
 @RiverBooks.Web_HostAddress = http://localhost:5245
 
-GET {{RiverBooks.Web_HostAddress}}/books/
-Accept: application/json
-###
-
 GET {{RiverBooks.Web_HostAddress}}/api/books/
 Accept: application/json
 ###
 
+@BookID=741f0053-d934-4868-a890-f40217a5b1c5
+GET {{RiverBooks.Web_HostAddress}}/api/books/{{BookID}}
+Accept: application/json
+###
+
+POST {{RiverBooks.Web_HostAddress}}/api/books/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Id": "593c39f7-851e-41db-b664-29976f26ddc5",
+  "Title": "The Art of War",
+  "Author": "Sun Tzu",
+  "Price": 15.99
+}
+###
+
+POST {{RiverBooks.Web_HostAddress}}/api/books/593c39f7-851e-41db-b664-29976f26ddc5/pricehistory
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Id": "593c39f7-851e-41db-b664-29976f26ddc5",
+  "newPrice": 6.99
+}
+###
+
+DELETE {{RiverBooks.Web_HostAddress}}/api/books/593c39f7-851e-41db-b664-29976f26ddc5
+Accept: application/json
+
+###

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 
 namespace RiverBooks.Books;
 
-internal class ListBooksEndpoints(IBookService bookService) : EndpointWithoutRequest<ListBooksResponse>
+internal class ListBooksEndpoint(IBookService bookService) : EndpointWithoutRequest<ListBooksResponse>
 {
     private readonly IBookService _bookService = bookService;
 

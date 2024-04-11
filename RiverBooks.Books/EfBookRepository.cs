@@ -28,9 +28,8 @@ internal class EfBookRepository : IBookRepository
   {
     return await _dbContext.Books.ToListAsync();
   }
-
   public Task SaveChanges()
   {
-    throw new NotImplementedException();
+    return _dbContext.SaveChangesAsync();
   }
 }
