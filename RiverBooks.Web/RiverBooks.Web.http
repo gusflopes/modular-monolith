@@ -27,7 +27,7 @@ Content-Type: application/json
 
 {
   "Id": "593c39f7-851e-41db-b664-29976f26ddc5",
-  "newPrice": 6.99
+  "newPrice": -6.99
 }
 ###
 
