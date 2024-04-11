@@ -2,6 +2,8 @@
 
 namespace RiverBooks.Books;
 
+public record UpdateBookPriceRequest(Guid Id, decimal NewPrice);
+
 internal class UpdateBookPriceEndpoint(IBookService bookService) : Endpoint<UpdateBookPriceRequest, BookDto>
 {
   private readonly IBookService _bookService = bookService;
