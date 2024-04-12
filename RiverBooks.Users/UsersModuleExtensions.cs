@@ -9,10 +9,10 @@ namespace RiverBooks.Users;
 
 public static class UsersModuleExtensions
 {
-  public static IServiceCollection AddUsersModuleServices(
-    this IServiceCollection services,
+  public static IServiceCollection AddUsersModuleServices(this IServiceCollection services,
     ConfigurationManager config,
-    ILogger logger)
+    ILogger logger,
+    List<Assembly> mediatRAssmblies)
   {
     string? connectionString = config.GetConnectionString("DefaultConnection");
     
@@ -21,6 +21,9 @@ public static class UsersModuleExtensions
     
     services.AddIdentityCore<ApplicationUser>()
       .AddEntityFrameworkStores<UsersDbContext>();
+    
+    // if using MediatR in this module, add any assemblies that contain handlers to the list
+    mediatRAssmblies.Add(typeof(UsersModuleExtensions).Assembly);
     
     logger.Information("{Module} module services registered", "Users");
 
