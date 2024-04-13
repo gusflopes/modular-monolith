@@ -58,4 +58,22 @@ Content-Type: application/json
 
 ###
 
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJndXNmbG9wZXNAaHVibGF3LmNvbS5iciIsImlzcyI6IlJpdmVyQm9va3MiLCJpYXQiOjE3MTI4MDc3NTYsImV4cCI6MTcxMjgxMTM1NiwibmJmIjoxNzEyODA3NzU2fQ.yveKs7Xn2MFyDv7yQmQnqAA-CvGl3gbP5ekjHNT4k88
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJndXNmbG9wZXNAaHVibGF3LmNvbS5iciIsImlzcyI6IlJpdmVyQm9va3MiLCJpYXQiOjE3MTI5NjYwOTksImV4cCI6MTcxMjk2OTY5OSwibmJmIjoxNzEyOTY2MDk5fQ.ZxOepOc6yM7UvkwfoELQUXyW40NYIsltBl8Ywq5nPjg
+
+# Add Item to Cart
+POST {{RiverBooks.Web_HostAddress}}/cart
+Accept: text/plain
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "BookId": "741f0053-d934-4868-a890-f40217a5b1c5",
+  "Quantity": 1
+}
+
+###
+
+#List items in cart
+GET {{RiverBooks.Web_HostAddress}}/cart
+Accept: application/json
+Authorization: Bearer {{token}}

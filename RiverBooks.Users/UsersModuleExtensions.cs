@@ -3,16 +3,18 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using RiverBooks.Users.Data;
 using Serilog;
 
 namespace RiverBooks.Users;
 
 public static class UsersModuleExtensions
 {
-  public static IServiceCollection AddUsersModuleServices(this IServiceCollection services,
+  public static IServiceCollection AddUsersModuleServices(
+    this IServiceCollection services,
     ConfigurationManager config,
     ILogger logger,
-    List<Assembly> mediatRAssmblies)
+    List<Assembly> mediatRAssemblies)
   {
     string? connectionString = config.GetConnectionString("DefaultConnection");
     
@@ -21,36 +23,14 @@ public static class UsersModuleExtensions
     
     services.AddIdentityCore<ApplicationUser>()
       .AddEntityFrameworkStores<UsersDbContext>();
+
+    services.AddScoped<IApplicationUserRepository, EfApplicationUserRepository>();
     
     // if using MediatR in this module, add any assemblies that contain handlers to the list
-    mediatRAssmblies.Add(typeof(UsersModuleExtensions).Assembly);
+    mediatRAssemblies.Add(typeof(UsersModuleExtensions).Assembly);
     
     logger.Information("{Module} module services registered", "Users");
 
     return services;
-  }
-}
-
-public class UsersDbContext : IdentityDbContext
-{
-  public UsersDbContext(DbContextOptions<UsersDbContext> options): base(options)
-  {
-  }
-  
-  public DbSet<ApplicationUser> ApplicationUsers { get; set; } = null!;
-
-  protected override void OnModelCreating(ModelBuilder modelBuilder)
-  {
-    modelBuilder.HasDefaultSchema("Users");
-
-    modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-    
-    base.OnModelCreating(modelBuilder);
-  }
-
-  protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
-  {
-    configurationBuilder.Properties<decimal>()
-      .HavePrecision(18, 6);
   }
 }

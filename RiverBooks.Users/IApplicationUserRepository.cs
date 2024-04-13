@@ -1,4 +1,4 @@
-﻿namespace RiverBooks.Users.CartEndpoints;
+﻿namespace RiverBooks.Users;
 
 public interface IApplicationUserRepository
 {

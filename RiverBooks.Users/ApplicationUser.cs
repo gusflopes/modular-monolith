@@ -17,7 +17,8 @@ public class ApplicationUser : IdentityUser
     if (existingItem != null)
     {
       existingItem.UpdateQuantity(existingItem.Quantity + item.Quantity);
-      // TODO: What to do if the other details of the item have been updated?
+      existingItem.UpdateDescription(item.Description);
+      existingItem.UpdateUnitPrice(item.UnitPrice);
       return;
     }
     _cartItems.Add(item);
@@ -33,8 +34,13 @@ public class CartItem
     Quantity = Guard.Against.NegativeOrZero(quantity);
     UnitPrice = Guard.Against.NegativeOrZero(unitPrice);
   }
-  
-  public Guid Id { get; private set; }
+
+  public CartItem()
+  {
+    // EFCore
+  }
+
+  public Guid Id { get; private set; } = Guid.NewGuid();
   public Guid BookId { get; private set; }
   public string Description { get; private set; } = string.Empty;
   public int Quantity { get; private set; }
@@ -43,5 +49,15 @@ public class CartItem
   internal void UpdateQuantity(int quantity)
   {
     Quantity = Guard.Against.NegativeOrZero(quantity);
+  }
+
+  internal void UpdateDescription(string description)
+  {
+    Description = Guard.Against.NullOrEmpty(description);
+  }
+
+  internal void UpdateUnitPrice(decimal unitPrice)
+  {
+    UnitPrice = Guard.Against.NegativeOrZero(unitPrice);
   }
 }

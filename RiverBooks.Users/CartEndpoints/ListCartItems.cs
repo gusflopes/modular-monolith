@@ -2,32 +2,32 @@
 using Ardalis.Result;
 using FastEndpoints;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using RiverBooks.Users.UseCases;
 
 namespace RiverBooks.Users.CartEndpoints;
 
-internal class AddItem : Endpoint<AddCartItemRequest>
+internal class ListCartItems : EndpointWithoutRequest<CartResponse>
 {
   private readonly IMediator _mediator;
-  
-  public AddItem(IMediator mediator)
+
+  public ListCartItems(IMediator mediator)
   {
     _mediator = mediator;
   }
+
   public override void Configure()
   {
-    Post("/cart");
+    Get("/cart");
     Claims("EmailAddress");
   }
 
-  public override async Task HandleAsync(AddCartItemRequest req, CancellationToken ct)
+  public override async Task HandleAsync(CancellationToken ct)
   {
     var emailAddress = User.FindFirstValue("EmailAddress");
 
-    var command = new AddItemToCartCommand(req.BookId, req.Quantity, emailAddress!);
-    
-    var result = await _mediator!.Send(command, ct);
+    var query = new ListCartItemsQuery(emailAddress!);
+
+    var result = await _mediator.Send(query);
 
     if (result.Status == ResultStatus.Unauthorized)
     {
@@ -35,8 +35,8 @@ internal class AddItem : Endpoint<AddCartItemRequest>
     }
     else
     {
-      await SendOkAsync();
+      var response = new CartResponse() { CartItems = result.Value };
+      await SendAsync(response);
     }
-    
   }
 }

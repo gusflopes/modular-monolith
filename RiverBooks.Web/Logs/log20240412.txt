@@ -1,0 +1,331 @@
+2024-04-12 17:59:28.019 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-12 17:59:28.046 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-12 17:59:28.050 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-12 17:59:28.054 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-12 17:59:28.072 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-12 17:59:28.087 -04:00 [INF] Applying migration '20240412215754_UpdateUsersDbContext'.
+2024-04-12 17:59:28.127 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users].[AspNetUsers] ADD [FullName] nvarchar(max) NULL;
+2024-04-12 17:59:28.133 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users].[CartItem] (
+    [Id] uniqueidentifier NOT NULL,
+    [BookId] uniqueidentifier NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [Quantity] int NOT NULL,
+    [UnitPrice] decimal(18,6) NOT NULL,
+    [ApplicationUserId] nvarchar(450) NULL,
+    CONSTRAINT [PK_CartItem] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_CartItem_AspNetUsers_ApplicationUserId] FOREIGN KEY ([ApplicationUserId]) REFERENCES [Users].[AspNetUsers] ([Id])
+);
+2024-04-12 17:59:28.139 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CartItem_ApplicationUserId] ON [Users].[CartItem] ([ApplicationUserId]);
+2024-04-12 17:59:28.146 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240412215754_UpdateUsersDbContext', N'8.0.4');
+2024-04-12 19:51:41.961 -04:00 [INF] Registered 9 endpoints in 758 milliseconds.
+2024-04-12 19:51:42.153 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-12 19:51:42.328 -04:00 [INF] Now listening on: http://localhost:5245
+2024-04-12 19:51:42.329 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-12 19:51:42.330 -04:00 [INF] Hosting environment: Development
+2024-04-12 19:51:42.330 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-12 19:51:42.394 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5245/swagger/index.html - null null
+2024-04-12 19:51:42.586 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5245/swagger/index.html - 200 null text/html; charset=utf-8 195.4786ms
+2024-04-12 19:51:42.606 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5245/swagger/index.css - null null
+2024-04-12 19:51:42.615 -04:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2024-04-12 19:51:42.616 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5245/swagger/index.css - 200 218 text/css 10.3569ms
+2024-04-12 19:51:43.042 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5245/swagger/v1/swagger.json - null null
+2024-04-12 19:51:43.050 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5245/swagger/favicon-32x32.png - null null
+2024-04-12 19:51:43.057 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-04-12 19:51:43.058 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-12 19:51:43.059 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5245/swagger/favicon-32x32.png - 200 628 image/png 8.147ms
+2024-04-12 19:51:43.409 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5245/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 366.561ms
+2024-04-12 19:54:29.041 -04:00 [INF] Registered 9 endpoints in 571 milliseconds.
+2024-04-12 19:54:29.168 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-12 19:54:29.238 -04:00 [INF] Now listening on: http://localhost:5245
+2024-04-12 19:54:29.239 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-12 19:54:29.239 -04:00 [INF] Hosting environment: Development
+2024-04-12 19:54:29.240 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-12 19:54:29.367 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5245/swagger/index.html - null null
+2024-04-12 19:54:29.547 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5245/swagger/index.html - 200 null text/html; charset=utf-8 182.3841ms
+2024-04-12 19:54:30.102 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5245/swagger/v1/swagger.json - null null
+2024-04-12 19:54:30.121 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-12 19:54:30.474 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5245/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 371.4528ms
+2024-04-12 19:54:55.543 -04:00 [INF] Registered 9 endpoints in 496 milliseconds.
+2024-04-12 19:54:55.673 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-12 19:54:55.779 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-12 19:54:55.780 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-12 19:54:55.780 -04:00 [INF] Hosting environment: Development
+2024-04-12 19:54:55.781 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-12 19:54:56.143 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-12 19:54:56.316 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 176.7564ms
+2024-04-12 19:54:56.350 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/swagger-ui.css - null null
+2024-04-12 19:54:56.351 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.css - null null
+2024-04-12 19:54:56.352 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/swagger-ui-standalone-preset.js - null null
+2024-04-12 19:54:56.352 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/swagger-ui-bundle.js - null null
+2024-04-12 19:54:56.368 -04:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2024-04-12 19:54:56.369 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.css - 200 218 text/css 18.6753ms
+2024-04-12 19:54:56.397 -04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-04-12 19:54:56.397 -04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-04-12 19:54:56.404 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/swagger-ui-standalone-preset.js - 200 230642 text/javascript 51.3326ms
+2024-04-12 19:54:56.404 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/swagger-ui.css - 200 151213 text/css 53.7036ms
+2024-04-12 19:54:56.414 -04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-04-12 19:54:56.416 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/swagger-ui-bundle.js - 200 1385018 text/javascript 63.581ms
+2024-04-12 19:54:56.874 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/favicon-32x32.png - null null
+2024-04-12 19:54:56.874 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-12 19:54:56.876 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-04-12 19:54:56.878 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/favicon-32x32.png - 200 628 image/png 4.1607ms
+2024-04-12 19:54:56.888 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-12 19:54:57.171 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 297.5712ms
+2024-04-12 19:54:58.056 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users/login - application/json 68
+2024-04-12 19:54:58.061 -04:00 [INF] Executing endpoint 'HTTP: POST /users/login'
+2024-04-12 19:54:59.150 -04:00 [INF] Executed DbCommand (57ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-12 19:54:59.305 -04:00 [INF] Executed endpoint 'HTTP: POST /users/login'
+2024-04-12 19:54:59.311 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users/login - 200 null application/json 1254.4746ms
+2024-04-12 19:56:45.108 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-12 19:56:45.141 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-12 19:56:45.265 -04:00 [INF] Executed DbCommand (29ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 19:56:45.294 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-12 19:56:45.295 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 187.2916ms
+2024-04-12 19:56:49.130 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-12 19:56:49.137 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-12 19:56:49.150 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 19:56:49.256 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Precision = 18) (Scale = 6) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users].[CartItem] ([Id], [ApplicationUserId], [BookId], [Description], [Quantity], [UnitPrice])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-04-12 19:56:49.266 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-12 19:56:49.267 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 200 null null 137.3753ms
+2024-04-12 19:56:51.192 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-12 19:56:51.195 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-12 19:56:51.208 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 19:56:51.216 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-12 19:56:51.217 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 25.1515ms
+2024-04-12 19:58:50.460 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-12 19:58:50.463 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-12 19:58:50.467 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 19:58:50.470 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-12 19:58:50.471 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 11.3091ms
+2024-04-12 20:03:38.499 -04:00 [INF] Registered 9 endpoints in 507 milliseconds.
+2024-04-12 20:03:38.625 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-12 20:03:38.725 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-12 20:03:38.726 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-12 20:03:38.726 -04:00 [INF] Hosting environment: Development
+2024-04-12 20:03:38.726 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-12 20:03:39.278 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-12 20:03:39.467 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 192.0749ms
+2024-04-12 20:03:39.947 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-12 20:03:39.962 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-12 20:03:40.291 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 343.6241ms
+2024-04-12 20:03:52.546 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-12 20:03:52.596 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-12 20:03:53.554 -04:00 [INF] Executed DbCommand (51ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 20:03:53.640 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-12 20:03:53.645 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 1098.8062ms
+2024-04-12 20:03:57.160 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-12 20:03:57.163 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-12 20:03:57.201 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 20:03:57.281 -04:00 [INF] Executed DbCommand (16ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users].[CartItem] SET [Quantity] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-04-12 20:03:57.293 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-12 20:03:57.294 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 200 null null 133.7797ms
+2024-04-12 20:04:02.046 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-12 20:04:02.048 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-12 20:04:02.062 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 20:04:02.064 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-12 20:04:02.065 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 18.6785ms
+2024-04-12 20:05:03.241 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-12 20:05:03.243 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-12 20:05:03.247 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 20:05:03.249 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-12 20:05:03.251 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 9.7508ms
+2024-04-12 20:05:05.983 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-12 20:05:05.985 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-12 20:05:05.988 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 20:05:06.024 -04:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Precision = 18) (Scale = 6) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users].[CartItem] ([Id], [ApplicationUserId], [BookId], [Description], [Quantity], [UnitPrice])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-04-12 20:05:06.025 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-12 20:05:06.026 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 200 null null 43.4862ms
+2024-04-12 20:05:08.560 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-12 20:05:08.562 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-12 20:05:08.566 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 20:05:08.568 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-12 20:05:08.568 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 8.3356ms
+2024-04-12 20:24:52.042 -04:00 [INF] Registered 9 endpoints in 501 milliseconds.
+2024-04-12 20:24:52.157 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-12 20:24:52.257 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-12 20:24:52.257 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-12 20:24:52.258 -04:00 [INF] Hosting environment: Development
+2024-04-12 20:24:52.258 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-12 20:24:52.821 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-12 20:24:52.980 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 162.5594ms
+2024-04-12 20:24:53.291 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-12 20:24:53.307 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-12 20:24:53.616 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 325.3699ms
+2024-04-12 20:31:25.112 -04:00 [INF] Registered 9 endpoints in 517 milliseconds.
+2024-04-12 20:31:25.240 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-12 20:31:25.338 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-12 20:31:25.339 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-12 20:31:25.339 -04:00 [INF] Hosting environment: Development
+2024-04-12 20:31:25.340 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-12 20:31:25.504 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-12 20:31:25.709 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 208.1804ms
+2024-04-12 20:31:26.080 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-12 20:31:26.093 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-12 20:31:26.441 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 360.5319ms
+2024-04-12 20:31:51.352 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-12 20:31:51.407 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-12 20:31:52.464 -04:00 [INF] Executed DbCommand (36ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 20:31:52.543 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-12 20:31:52.548 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 1196.7906ms
+2024-04-12 20:31:55.579 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-12 20:31:55.589 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-12 20:31:55.650 -04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 20:31:55.721 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[Price], [b].[Title]
+FROM [Books].[Books] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2024-04-12 20:31:55.840 -04:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Precision = 18) (Scale = 6) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users].[CartItem] ([Id], [ApplicationUserId], [BookId], [Description], [Quantity], [UnitPrice])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-04-12 20:31:55.853 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-12 20:31:55.854 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 200 null null 275.5376ms
+2024-04-12 20:31:58.060 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-12 20:31:58.062 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-12 20:31:58.067 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-12 20:31:58.074 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-12 20:31:58.076 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 15.8452ms
+2024-04-12 20:35:24.028 -04:00 [INF] Registered 9 endpoints in 523 milliseconds.
+2024-04-12 20:35:24.193 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-12 20:35:24.299 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-12 20:35:24.300 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-12 20:35:24.301 -04:00 [INF] Hosting environment: Development
+2024-04-12 20:35:24.301 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-12 20:35:24.488 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-12 20:35:24.665 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 179.5786ms
+2024-04-12 20:35:24.997 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-12 20:35:25.012 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-12 20:35:25.337 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 339.6637ms

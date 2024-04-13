@@ -27,14 +27,14 @@ builder.Services.AddFastEndpoints()
   .SwaggerDocument();
 
 // Module Services
-List<Assembly> mediatRAssmblies = [typeof(Program).Assembly];
+List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
 // MediatR added only when needed
-builder.Services.AddBookServices(builder.Configuration, logger, mediatRAssmblies);
-builder.Services.AddUsersModuleServices(builder.Configuration, logger, mediatRAssmblies);
+builder.Services.AddBookServices(builder.Configuration, logger, mediatRAssemblies);
+builder.Services.AddUsersModuleServices(builder.Configuration, logger, mediatRAssemblies);
 
 // Set up MediatR
 builder.Services.AddMediatR(cfg =>
-  cfg.RegisterServicesFromAssemblies(mediatRAssmblies.ToArray()));
+  cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray()));
 
 var app = builder.Build();
 
