@@ -1,0 +1,244 @@
+2024-04-13 16:46:18.275 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-13 16:46:18.300 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-13 16:46:18.303 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-13 16:46:18.305 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-13 16:46:18.317 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-13 16:46:18.327 -04:00 [INF] Applying migration '20240413204527_Initial_OrderProcessing'.
+2024-04-13 16:46:18.366 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF SCHEMA_ID(N'OrderProcessing') IS NULL EXEC(N'CREATE SCHEMA [OrderProcessing];');
+2024-04-13 16:46:18.372 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderProcessing].[AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2024-04-13 16:46:18.375 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderProcessing].[AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+2024-04-13 16:46:18.379 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderProcessing].[Orders] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [DateCreated] datetimeoffset NOT NULL,
+    [BillingAddress_City] nvarchar(50) NOT NULL,
+    [BillingAddress_Country] nvarchar(50) NOT NULL,
+    [BillingAddress_PostalCode] nvarchar(20) NOT NULL,
+    [BillingAddress_State] nvarchar(50) NOT NULL,
+    [BillingAddress_Street1] nvarchar(50) NOT NULL,
+    [BillingAddress_Street2] nvarchar(50) NOT NULL,
+    [ShippingAddress_City] nvarchar(50) NOT NULL,
+    [ShippingAddress_Country] nvarchar(50) NOT NULL,
+    [ShippingAddress_PostalCode] nvarchar(20) NOT NULL,
+    [ShippingAddress_State] nvarchar(50) NOT NULL,
+    [ShippingAddress_Street1] nvarchar(50) NOT NULL,
+    [ShippingAddress_Street2] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id])
+);
+2024-04-13 16:46:18.384 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderProcessing].[AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [OrderProcessing].[AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+2024-04-13 16:46:18.389 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderProcessing].[AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [OrderProcessing].[AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-04-13 16:46:18.393 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderProcessing].[AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [OrderProcessing].[AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-04-13 16:46:18.397 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderProcessing].[AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [OrderProcessing].[AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [OrderProcessing].[AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-04-13 16:46:18.402 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderProcessing].[AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [OrderProcessing].[AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-04-13 16:46:18.407 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderProcessing].[OrderItem] (
+    [Id] uniqueidentifier NOT NULL,
+    [BookId] uniqueidentifier NOT NULL,
+    [Quantity] int NOT NULL,
+    [UnitPrice] decimal(18,6) NOT NULL,
+    [Description] nvarchar(100) NOT NULL,
+    [OrderId] uniqueidentifier NULL,
+    CONSTRAINT [PK_OrderItem] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_OrderItem_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [OrderProcessing].[Orders] ([Id])
+);
+2024-04-13 16:46:18.411 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [OrderProcessing].[AspNetRoleClaims] ([RoleId]);
+2024-04-13 16:46:18.415 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [OrderProcessing].[AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2024-04-13 16:46:18.418 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [OrderProcessing].[AspNetUserClaims] ([UserId]);
+2024-04-13 16:46:18.420 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [OrderProcessing].[AspNetUserLogins] ([UserId]);
+2024-04-13 16:46:18.423 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [OrderProcessing].[AspNetUserRoles] ([RoleId]);
+2024-04-13 16:46:18.425 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [OrderProcessing].[AspNetUsers] ([NormalizedEmail]);
+2024-04-13 16:46:18.429 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [OrderProcessing].[AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2024-04-13 16:46:18.434 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_OrderItem_OrderId] ON [OrderProcessing].[OrderItem] ([OrderId]);
+2024-04-13 16:46:18.438 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240413204527_Initial_OrderProcessing', N'8.0.4');
+2024-04-13 17:03:49.656 -04:00 [INF] Registered 10 endpoints in 1.329 milliseconds.
+2024-04-13 17:03:49.988 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 17:03:50.208 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-13 17:03:50.209 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-13 17:03:50.209 -04:00 [INF] Hosting environment: Development
+2024-04-13 17:03:50.210 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-13 17:03:50.447 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-13 17:03:50.738 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 294.4882ms
+2024-04-13 17:03:51.131 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-13 17:03:51.146 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-13 17:03:51.516 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 384.6305ms
+2024-04-13 17:05:22.264 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/orders - null 0
+2024-04-13 17:05:22.305 -04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '13/04/2024 00:54:59', Current time (UTC): '13/04/2024 21:05:22'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-04-13 17:05:22.335 -04:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '13/04/2024 00:54:59', Current time (UTC): '13/04/2024 21:05:22'.
+2024-04-13 17:05:22.340 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+Handler assertion should evaluate to true.
+2024-04-13 17:05:22.344 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-13 17:05:22.345 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/orders - 401 0 null 80.7803ms
+2024-04-13 17:05:30.744 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users/login - application/json 68
+2024-04-13 17:05:30.748 -04:00 [INF] Executing endpoint 'HTTP: POST /users/login'
+2024-04-13 17:05:31.967 -04:00 [INF] Executed DbCommand (36ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-13 17:05:32.115 -04:00 [INF] Executed endpoint 'HTTP: POST /users/login'
+2024-04-13 17:05:32.123 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users/login - 200 null application/json 1379.7306ms
+2024-04-13 17:05:45.155 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/orders - null 0
+2024-04-13 17:05:45.166 -04:00 [INF] Executing endpoint 'HTTP: GET /orders'
+2024-04-13 17:05:45.337 -04:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[DateCreated], [o].[UserId], [o].[BillingAddress_City], [o].[BillingAddress_Country], [o].[BillingAddress_PostalCode], [o].[BillingAddress_State], [o].[BillingAddress_Street1], [o].[BillingAddress_Street2], [o].[ShippingAddress_City], [o].[ShippingAddress_Country], [o].[ShippingAddress_PostalCode], [o].[ShippingAddress_State], [o].[ShippingAddress_Street1], [o].[ShippingAddress_Street2], [o0].[Id], [o0].[BookId], [o0].[Description], [o0].[OrderId], [o0].[Quantity], [o0].[UnitPrice]
+FROM [OrderProcessing].[Orders] AS [o]
+LEFT JOIN [OrderProcessing].[OrderItem] AS [o0] ON [o].[Id] = [o0].[OrderId]
+ORDER BY [o].[Id]
+2024-04-13 17:05:45.359 -04:00 [INF] Executed endpoint 'HTTP: GET /orders'
+2024-04-13 17:05:45.361 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/orders - 200 null application/json 206.4873ms
+2024-04-13 17:47:11.436 -04:00 [INF] Registered 11 endpoints in 568 milliseconds.
+2024-04-13 17:47:11.563 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 17:47:11.665 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-13 17:47:11.666 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-13 17:47:11.666 -04:00 [INF] Hosting environment: Development
+2024-04-13 17:47:11.667 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-13 17:47:12.256 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-13 17:47:12.446 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 193.6467ms
+2024-04-13 17:47:12.873 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-13 17:47:12.888 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-13 17:47:13.225 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 352.4444ms
+2024-04-13 17:47:40.842 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-13 17:47:40.890 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-13 17:47:41.878 -04:00 [INF] Executed DbCommand (54ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 17:47:41.983 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-13 17:47:41.989 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 1147.1153ms
+2024-04-13 17:49:37.548 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart/checkout - application/json 127
+2024-04-13 17:49:37.555 -04:00 [INF] Executing endpoint 'HTTP: POST /cart/checkout'
+2024-04-13 17:49:37.593 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 17:49:37.813 -04:00 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTimeOffset), @p2='?' (DbType = Guid), @p3='?' (Size = 50), @p4='?' (Size = 50), @p5='?' (Size = 20), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (Size = 50), @p9='?' (Size = 50), @p10='?' (Size = 50), @p11='?' (Size = 20), @p12='?' (Size = 50), @p13='?' (Size = 50), @p14='?' (Size = 50), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (Size = 100), @p18='?' (DbType = Guid), @p19='?' (DbType = Int32), @p20='?' (Precision = 18) (Scale = 6) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderProcessing].[Orders] ([Id], [DateCreated], [UserId], [BillingAddress_City], [BillingAddress_Country], [BillingAddress_PostalCode], [BillingAddress_State], [BillingAddress_Street1], [BillingAddress_Street2], [ShippingAddress_City], [ShippingAddress_Country], [ShippingAddress_PostalCode], [ShippingAddress_State], [ShippingAddress_Street1], [ShippingAddress_Street2])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+INSERT INTO [OrderProcessing].[OrderItem] ([Id], [BookId], [Description], [OrderId], [Quantity], [UnitPrice])
+VALUES (@p15, @p16, @p17, @p18, @p19, @p20);
+2024-04-13 17:49:37.879 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users].[CartItem] SET [ApplicationUserId] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-04-13 17:49:37.886 -04:00 [INF] Executed endpoint 'HTTP: POST /cart/checkout'
+2024-04-13 17:49:37.888 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart/checkout - 200 null null 340.7836ms
+2024-04-13 17:49:45.269 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/orders - null 0
+2024-04-13 17:49:45.272 -04:00 [INF] Executing endpoint 'HTTP: GET /orders'
+2024-04-13 17:49:45.307 -04:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[DateCreated], [o].[UserId], [o].[BillingAddress_City], [o].[BillingAddress_Country], [o].[BillingAddress_PostalCode], [o].[BillingAddress_State], [o].[BillingAddress_Street1], [o].[BillingAddress_Street2], [o].[ShippingAddress_City], [o].[ShippingAddress_Country], [o].[ShippingAddress_PostalCode], [o].[ShippingAddress_State], [o].[ShippingAddress_Street1], [o].[ShippingAddress_Street2], [o0].[Id], [o0].[BookId], [o0].[Description], [o0].[OrderId], [o0].[Quantity], [o0].[UnitPrice]
+FROM [OrderProcessing].[Orders] AS [o]
+LEFT JOIN [OrderProcessing].[OrderItem] AS [o0] ON [o].[Id] = [o0].[OrderId]
+ORDER BY [o].[Id]
+2024-04-13 17:49:45.319 -04:00 [INF] Executed endpoint 'HTTP: GET /orders'
+2024-04-13 17:49:45.320 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/orders - 200 null application/json 51.2286ms
+2024-04-13 17:52:51.774 -04:00 [INF] Registered 11 endpoints in 533 milliseconds.
+2024-04-13 17:52:51.908 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 17:52:52.023 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-13 17:52:52.024 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-13 17:52:52.025 -04:00 [INF] Hosting environment: Development
+2024-04-13 17:52:52.025 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-13 17:52:52.558 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-13 17:52:52.766 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 211.7996ms
+2024-04-13 17:52:53.237 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-13 17:52:53.254 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-13 17:52:53.661 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 424.8982ms

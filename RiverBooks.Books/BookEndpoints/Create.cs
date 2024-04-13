@@ -29,7 +29,7 @@ internal class Create(IBookService bookService) : Endpoint<CreateBookRequest, Bo
   private readonly IBookService _bookService = bookService;
   public override void Configure()
   {
-    Post("/api/books");
+    Post("/books");
     AllowAnonymous();
   }
 

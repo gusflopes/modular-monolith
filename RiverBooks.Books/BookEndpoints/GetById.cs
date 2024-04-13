@@ -9,7 +9,7 @@ internal class GetById(IBookService bookService) : Endpoint<GetBookByIdRequest, 
   private readonly IBookService _bookService = bookService;
   public override void Configure()
   {
-    Get("/api/books/{Id}");
+    Get("/books/{Id}");
     AllowAnonymous();
   }
 

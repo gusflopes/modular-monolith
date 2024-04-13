@@ -14,7 +14,7 @@ internal class List(IBookService bookService) : EndpointWithoutRequest<ListBooks
 
     public override void Configure()
     {
-        Get("/api/books");
+        Get("/books");
         AllowAnonymous();
     }
     public override async Task HandleAsync(CancellationToken cancellationToken = default)

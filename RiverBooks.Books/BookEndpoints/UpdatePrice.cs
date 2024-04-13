@@ -25,7 +25,7 @@ internal class UpdateBookPriceEndpoint(IBookService bookService) : Endpoint<Upda
   private readonly IBookService _bookService = bookService;
   public override void Configure()
   {
-    Post("/api/books/{Id}/pricehistory");
+    Post("/books/{Id}/pricehistory");
     AllowAnonymous();
   }
 

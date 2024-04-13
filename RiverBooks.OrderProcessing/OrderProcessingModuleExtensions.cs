@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using RiverBooks.Users.Data;
+using RiverBooks.OrderProcessing.Data;
 using Serilog;
 
-namespace RiverBooks.Users;
+namespace RiverBooks.OrderProcessing;
 
-public static class UsersModuleExtensions
+public static class OrderProcessingModuleExtensions
 {
-  public static IServiceCollection AddUserModuleServices(
+  public static IServiceCollection AddOrderProcessingModuleServices(
     this IServiceCollection services,
     ConfigurationManager config,
     ILogger logger,
@@ -18,18 +18,15 @@ public static class UsersModuleExtensions
   {
     string? connectionString = config.GetConnectionString("DefaultConnection");
     
-    services.AddDbContext<UsersDbContext>(options =>
+    services.AddDbContext<OrderProcessingDbContext>(options =>
       options.UseSqlServer(connectionString));
     
-    services.AddIdentityCore<ApplicationUser>()
-      .AddEntityFrameworkStores<UsersDbContext>();
-
-    services.AddScoped<IApplicationUserRepository, EfApplicationUserRepository>();
+    services.AddScoped<IOrderRepository, EfOrderRepository>();
     
     // if using MediatR in this module, add any assemblies that contain handlers to the list
-    mediatRAssemblies.Add(typeof(UsersModuleExtensions).Assembly);
+    mediatRAssemblies.Add(typeof(OrderProcessingModuleExtensions).Assembly);
     
-    logger.Information("{Module} module services registered", "Users");
+    logger.Information("{Module} module services registered", "OrderProcessing");
 
     return services;
   }

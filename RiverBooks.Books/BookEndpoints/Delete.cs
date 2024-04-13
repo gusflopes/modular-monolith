@@ -9,7 +9,7 @@ internal class Delete(IBookService bookService) : Endpoint<DeleteBookRequest>
   private readonly IBookService _bookService = bookService;
   public override void Configure()
   {
-    Delete("/api/books/{Id}");
+    Delete("/books/{Id}");
     AllowAnonymous();
   }
 
