@@ -19,7 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\RiverBooks.Books\RiverBooks.Books.csproj" />
+      <ProjectReference Include="..\RiverBooks.Books.Contracts\RiverBooks.Books.Contracts.csproj" />
     </ItemGroup>
 
 </Project>
