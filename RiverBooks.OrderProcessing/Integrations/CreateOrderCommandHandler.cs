@@ -1,6 +1,7 @@
 ﻿using Ardalis.Result;
 using MediatR;
 using RiverBooks.OrderProcessing.Contracts;
+using RiverBooks.OrderProcessing.Domain;
 using Serilog;
 
 namespace RiverBooks.OrderProcessing.Integrations;

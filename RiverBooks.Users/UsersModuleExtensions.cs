@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using RiverBooks.SharedKernel;
 using RiverBooks.Users.Data;
+using RiverBooks.Users.Infrastructure.Data;
 using RiverBooks.Users.Integrations;
 using Serilog;
 
@@ -27,10 +29,7 @@ public static class UsersModuleExtensions
 
     services.AddScoped<IApplicationUserRepository, EfApplicationUserRepository>();
     services.AddScoped<IReadOnlyUserStreetAddressRepository, EfUserStreetAddressRepository>();
-    
-    // Add MediatR Domain Event Dispatcher
-    services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
-    
+  
     // if using MediatR in this module, add any assemblies that contain handlers to the list
     mediatRAssemblies.Add(typeof(UsersModuleExtensions).Assembly);
     

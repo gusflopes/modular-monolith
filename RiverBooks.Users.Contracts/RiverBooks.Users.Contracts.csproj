@@ -11,5 +11,9 @@
     <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RiverBooks.SharedKernel\RiverBooks.SharedKernel.csproj" />
+  </ItemGroup>
+
 
 </Project>
