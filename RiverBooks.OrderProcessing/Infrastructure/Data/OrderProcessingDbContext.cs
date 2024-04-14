@@ -1,10 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using RiverBooks.OrderProcessing.Domain;
-using Serilog.Core;
 
-namespace RiverBooks.OrderProcessing.Data;
+namespace RiverBooks.OrderProcessing.Infrastructure.Data;
 
 internal class OrderProcessingDbContext : IdentityDbContext
 {

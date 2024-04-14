@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using Ardalis.Result;
 using Microsoft.Extensions.Logging;
+using RiverBooks.OrderProcessing.Domain;
 using RiverBooks.OrderProcessing.Integrations;
 using StackExchange.Redis;
 

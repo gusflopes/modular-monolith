@@ -1,4 +1,5 @@
 ﻿using Ardalis.Result;
+using RiverBooks.OrderProcessing.Domain;
 using Serilog;
 using ILogger = Serilog.ILogger;
 

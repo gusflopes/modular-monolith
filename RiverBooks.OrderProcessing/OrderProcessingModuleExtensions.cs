@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using RiverBooks.OrderProcessing.Data;
 using RiverBooks.OrderProcessing.Infrastructure;
+using RiverBooks.OrderProcessing.Infrastructure.Data;
 using RiverBooks.OrderProcessing.Integrations;
 using Serilog;
 

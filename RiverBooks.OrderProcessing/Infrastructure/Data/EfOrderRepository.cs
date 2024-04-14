@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RiverBooks.OrderProcessing.Data;
 using RiverBooks.OrderProcessing.Domain;
 
-namespace RiverBooks.OrderProcessing;
+namespace RiverBooks.OrderProcessing.Infrastructure.Data;
 
 internal class EfOrderRepository : IOrderRepository
 {

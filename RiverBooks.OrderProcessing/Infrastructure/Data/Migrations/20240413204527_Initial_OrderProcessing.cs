@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace RiverBooks.OrderProcessing.Data.Migrations
+namespace RiverBooks.OrderProcessing.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
     public partial class Initial_OrderProcessing : Migration

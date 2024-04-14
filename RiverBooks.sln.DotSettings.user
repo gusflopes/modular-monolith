@@ -6,5 +6,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::7E55EEAA-7EDA-45D9-B7D3-F84DCACD1237::net8.0::RiverBooks.Books.Tests.Endpoints.BookList.ReturnThreeBooksAsync&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::7E55EEAA-7EDA-45D9-B7D3-F84DCACD1237::net8.0::RiverBooks.Books.Tests.Endpoints.BookGetById.ReturnsExptectedBookGivenIdAsync&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::7039BBDE-2DCF-4C8E-A813-90B80A5329C7::net8.0::RiverBooks.OrderProcessing.Tests.InfrastructureDependencyTests.DomainTypesShouldNotReferenceInfrastructure&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
