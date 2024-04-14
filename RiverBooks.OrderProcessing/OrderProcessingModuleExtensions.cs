@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using RiverBooks.OrderProcessing.Data;
+using RiverBooks.OrderProcessing.Integrations;
 using Serilog;
 
 namespace RiverBooks.OrderProcessing;
@@ -22,6 +23,7 @@ public static class OrderProcessingModuleExtensions
       options.UseSqlServer(connectionString));
     
     services.AddScoped<IOrderRepository, EfOrderRepository>();
+    services.AddScoped<IOrderAddressCache, RedisOrderAddressCache>();
     
     // if using MediatR in this module, add any assemblies that contain handlers to the list
     mediatRAssemblies.Add(typeof(OrderProcessingModuleExtensions).Assembly);

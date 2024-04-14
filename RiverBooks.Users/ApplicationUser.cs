@@ -6,9 +6,29 @@ namespace RiverBooks.Users;
 public class ApplicationUser : IdentityUser
 {
   public string FullName { get; set; } = string.Empty;
+  
   private readonly List<CartItem> _cartItems = new();
   public IReadOnlyCollection<CartItem> CartItems => _cartItems.AsReadOnly();
+  
+  private readonly List<UserStreetAddress> _addresses = new();
+  public IReadOnlyCollection<UserStreetAddress> Addresses => _addresses.AsReadOnly();
 
+  internal UserStreetAddress AddAddress(Address address)
+  {
+    Guard.Against.Null(address);
+
+    var existingAddress = _addresses.SingleOrDefault(a => a.StreetAddress == address);
+    if (existingAddress != null)
+    {
+      return existingAddress;
+    }
+
+    var newAddress = new UserStreetAddress(Id, address);
+    _addresses.Add(newAddress);
+
+    return newAddress;
+  }
+  
   public void AddItemToCart(CartItem item)
   {
     Guard.Against.Null(item);

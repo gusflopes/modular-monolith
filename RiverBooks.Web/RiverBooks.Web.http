@@ -58,7 +58,8 @@ Content-Type: application/json
 
 ###
 
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJndXNmbG9wZXNAaHVibGF3LmNvbS5iciIsImlzcyI6IlJpdmVyQm9va3MiLCJpYXQiOjE3MTMwNDIzMzIsImV4cCI6MTcxMzA0NTkzMiwibmJmIjoxNzEzMDQyMzMyfQ.4lRtPdtATJ2jKDxw4RpAaGgWU-lL_KvCYF0P3Jd42ZU
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJndXNmbG9wZXNAaHVibGF3LmNvbS5iciIsImlzcyI6IlJpdmVyQm9va3MiLCJpYXQiOjE3MTMwNTkxMzgsImV4cCI6MTcxMzA2MjczOCwibmJmIjoxNzEzMDU5MTM4fQ.v9xZhTdS0ZAhcNXXt3bXeVAP7FfHJYPV9WgBIA9EuiU
+
 
 
 # Add Item to Cart
@@ -81,8 +82,8 @@ Authorization: Bearer {{token}}
 
 ###
 
-@ShippingAddressID=741f0053-d934-4868-a890-f40217a5b1c5
-@BillingAddressID=741f0053-d934-4868-a890-f40217a5b1c5
+@ShippingAddressID=1e3b40b1-a967-4450-9a22-77e70ed4c24a
+@BillingAddressID=1e3b40b1-a967-4450-9a22-77e70ed4c24a
 
 POST {{RiverBooks.Web_HostAddress}}/cart/checkout
 Accept: application/json
@@ -100,3 +101,27 @@ Content-Type: application/json
 GET {{RiverBooks.Web_HostAddress}}/orders
 Accept: application/json
 Authorization: Bearer {{token}}
+
+###
+
+# List Addresses
+GET {{RiverBooks.Web_HostAddress}}/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Add Address
+POST {{RiverBooks.Web_HostAddress}}/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "Street1": "Rua dos Bobos",
+  "Street2": "",
+  "City": "São Paulo",
+  "State": "SP",
+  "ZipCode": "12345-678",
+  "Country": "Brazil"
+}
