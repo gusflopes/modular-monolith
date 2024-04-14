@@ -702,3 +702,424 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
 2024-04-13 23:01:26.165 -04:00 [INF] [UseCase] Added address Address { Street = Rua dos Bobos, 123456, Street2 = , City = São Paulo, State = SP, ZipCode = 12345-678, Country = Brazil } to user gusflopes@hublaw.com.br (Total: 5)
 2024-04-13 23:01:26.166 -04:00 [INF] Executed endpoint 'HTTP: POST /users/addresses'
 2024-04-13 23:01:26.167 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users/addresses - 200 null null 50.7077ms
+2024-04-13 23:17:35.729 -04:00 [INF] Registered 13 endpoints in 561 milliseconds.
+2024-04-13 23:17:35.852 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 23:17:35.945 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-13 23:17:35.946 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-13 23:17:35.946 -04:00 [INF] Hosting environment: Development
+2024-04-13 23:17:35.947 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-13 23:17:36.617 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-13 23:17:36.858 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 244.3123ms
+2024-04-13 23:17:37.242 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-13 23:17:37.261 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-13 23:17:37.715 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 473.1652ms
+2024-04-13 23:42:23.719 -04:00 [INF] Registered 14 endpoints in 714 milliseconds.
+2024-04-13 23:42:23.847 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 23:42:23.930 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-13 23:42:23.931 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-13 23:42:23.931 -04:00 [INF] Hosting environment: Development
+2024-04-13 23:42:23.932 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-13 23:42:24.272 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-13 23:42:24.488 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 218.3067ms
+2024-04-13 23:42:24.813 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-13 23:42:24.830 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-13 23:42:25.206 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 393.8468ms
+2024-04-13 23:42:31.896 -04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7149/orders/addresses - null 0
+2024-04-13 23:42:31.942 -04:00 [INF] Executing endpoint 'HTTP: DELETE /orders/addresses'
+2024-04-13 23:42:31.995 -04:00 [WRN] FLUSHED CACHE FOR REDIS
+2024-04-13 23:42:31.998 -04:00 [INF] Executed endpoint 'HTTP: DELETE /orders/addresses'
+2024-04-13 23:42:32.000 -04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7149/orders/addresses - 204 null null 103.4001ms
+2024-04-13 23:42:59.523 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-13 23:42:59.530 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-13 23:43:00.626 -04:00 [INF] Executed DbCommand (40ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 23:43:00.727 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-13 23:43:00.733 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 1210.132ms
+2024-04-13 23:43:03.844 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart/checkout - application/json 127
+2024-04-13 23:43:03.848 -04:00 [INF] Executing endpoint 'HTTP: POST /cart/checkout'
+2024-04-13 23:43:03.889 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 23:43:07.001 -04:00 [WRN] Address "1e3b40b1-a967-4450-9a22-77e70ed4c24a" not found in REDIS
+2024-04-13 23:43:07.004 -04:00 [INF] Address "1e3b40b1-a967-4450-9a22-77e70ed4c24a" not found; fetching from source.
+2024-04-13 23:43:07.022 -04:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[@__addressId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[ApplicationUserId], [u].[UserId], [u].[StreetAddress_City], [u].[StreetAddress_Country], [u].[StreetAddress_State], [u].[StreetAddress_Street], [u].[StreetAddress_Street2], [u].[StreetAddress_ZipCode]
+FROM [Users].[UserStreetAddresses] AS [u]
+WHERE [u].[Id] = @__addressId_0
+2024-04-13 23:43:07.044 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'RiverBooks.Users.Data.UsersDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users.UserStreetAddresses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:726f7016-0418-47b4-bd9b-4d930655c5a6
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users.UserStreetAddresses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:726f7016-0418-47b4-bd9b-4d930655c5a6
+Error Number:208,State:1,Class:16
+2024-04-13 23:43:11.020 -04:00 [INF] Executed endpoint 'HTTP: POST /cart/checkout'
+2024-04-13 23:43:11.022 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users.UserStreetAddresses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at RiverBooks.Users.Data.EfUserStreetAddressRepository.GetById(Guid addressId) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\Data\EfApplicationUserRepository.cs:line 17
+   at RiverBooks.Users.Integrations.UserAddressDetailsByIdQueryHandler.Handle(UserAddressDetailsByIdQuery request, CancellationToken cancellationToken) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\Integrations\UserAddressDetailsByIdQueryHandler.cs:line 19
+   at RiverBooks.OrderProcessing.Integrations.ReadThroughOrderAddressCache.GetById(Guid addressId) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.OrderProcessing\ReadThroughOrderAddressCache.cs:line 32
+   at RiverBooks.OrderProcessing.Integrations.CreateOrderCommandHandler.Handle(CreateOrderCommand request, CancellationToken cancellationToken) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.OrderProcessing\Integrations\CreateOrderCommandHandler.cs:line 27
+   at RiverBooks.Users.UseCases.CheckoutCartCommandHandler.Handle(CheckoutCartCommand request, CancellationToken cancellationToken) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\UseCases\Cart\CheckoutCartCommand.cs:line 33
+   at RiverBooks.Users.CartEndpoints.Checkout.HandleAsync(CheckoutRequest request, CancellationToken cancellationToken) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\CartEndpoints\Checkout.cs:line 33
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:726f7016-0418-47b4-bd9b-4d930655c5a6
+Error Number:208,State:1,Class:16
+2024-04-13 23:43:11.033 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart/checkout - 500 null text/plain; charset=utf-8 7188.8969ms
+2024-04-13 23:43:40.159 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-13 23:43:40.162 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-13 23:43:40.176 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 23:43:40.178 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-13 23:43:40.179 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 19.4597ms
+2024-04-13 23:43:51.921 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/users/addresses - null 0
+2024-04-13 23:43:51.922 -04:00 [INF] Executing endpoint 'HTTP: GET /users/addresses'
+2024-04-13 23:43:51.936 -04:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [u].[Id], [u].[ApplicationUserId], [u].[UserId], [u].[StreetAddress_City], [u].[StreetAddress_Country], [u].[StreetAddress_State], [u].[StreetAddress_Street], [u].[StreetAddress_Street2], [u].[StreetAddress_ZipCode]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[UserStreetAddresses] AS [u] ON [t].[Id] = [u].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 23:43:51.939 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'RiverBooks.Users.Data.UsersDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users.UserStreetAddresses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:726f7016-0418-47b4-bd9b-4d930655c5a6
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users.UserStreetAddresses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:726f7016-0418-47b4-bd9b-4d930655c5a6
+Error Number:208,State:1,Class:16
+2024-04-13 23:43:52.004 -04:00 [INF] Executed endpoint 'HTTP: GET /users/addresses'
+2024-04-13 23:43:52.005 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users.UserStreetAddresses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at RiverBooks.Users.Data.EfApplicationUserRepository.GetUserWithAddressesByEmail(String email) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\Data\EfApplicationUserRepository.cs:line 39
+   at RiverBooks.Users.UseCases.ListAddressesQueryHandler.Handle(ListAddressesQuery request, CancellationToken cancellationToken) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\UseCases\User\ListAddressesQuery.cs:line 19
+   at RiverBooks.Users.UseCases.ListAddresses.HandleAsync(CancellationToken ct) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\UserEndpoints\ListAddresses.cs:line 26
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:726f7016-0418-47b4-bd9b-4d930655c5a6
+Error Number:208,State:1,Class:16
+2024-04-13 23:43:52.011 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/users/addresses - 500 null text/plain; charset=utf-8 90.8051ms
+2024-04-13 23:48:28.050 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/users/addresses - null 0
+2024-04-13 23:48:28.052 -04:00 [INF] Executing endpoint 'HTTP: GET /users/addresses'
+2024-04-13 23:48:36.480 -04:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [u].[Id], [u].[ApplicationUserId], [u].[UserId], [u].[StreetAddress_City], [u].[StreetAddress_Country], [u].[StreetAddress_State], [u].[StreetAddress_Street], [u].[StreetAddress_Street2], [u].[StreetAddress_ZipCode]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[UserStreetAddresses] AS [u] ON [t].[Id] = [u].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 23:48:36.482 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'RiverBooks.Users.Data.UsersDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users.UserStreetAddresses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:726f7016-0418-47b4-bd9b-4d930655c5a6
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users.UserStreetAddresses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:726f7016-0418-47b4-bd9b-4d930655c5a6
+Error Number:208,State:1,Class:16
+2024-04-13 23:48:46.419 -04:00 [INF] Executed endpoint 'HTTP: GET /users/addresses'
+2024-04-13 23:48:46.420 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users.UserStreetAddresses'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at RiverBooks.Users.Data.EfApplicationUserRepository.GetUserWithAddressesByEmail(String email) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\Data\EfApplicationUserRepository.cs:line 39
+   at RiverBooks.Users.UseCases.ListAddressesQueryHandler.Handle(ListAddressesQuery request, CancellationToken cancellationToken) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\UseCases\User\ListAddressesQuery.cs:line 19
+   at RiverBooks.Users.UseCases.ListAddresses.HandleAsync(CancellationToken ct) in C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Users\UserEndpoints\ListAddresses.cs:line 26
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:726f7016-0418-47b4-bd9b-4d930655c5a6
+Error Number:208,State:1,Class:16
+2024-04-13 23:48:46.426 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/users/addresses - 500 null text/plain; charset=utf-8 18376.1192ms
+2024-04-13 23:48:52.767 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/users/addresses - null 0
+2024-04-13 23:48:52.769 -04:00 [INF] Executing endpoint 'HTTP: GET /users/addresses'
+2024-04-13 23:53:13.430 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-13 23:53:13.453 -04:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-13 23:53:13.456 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-13 23:53:13.460 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-13 23:53:13.469 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-13 23:53:13.480 -04:00 [INF] No migrations were applied. The database is already up to date.
+2024-04-13 23:54:51.334 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-13 23:54:51.360 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-13 23:54:51.364 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-13 23:54:51.367 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-13 23:54:51.375 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-13 23:54:51.386 -04:00 [INF] Applying migration '20240414035426_Update_UserAddresses'.
+2024-04-13 23:54:51.425 -04:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users].[UserStreetAddress] DROP CONSTRAINT [FK_UserStreetAddress_AspNetUsers_ApplicationUserId];
+2024-04-13 23:54:51.458 -04:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users].[UserStreetAddress] DROP CONSTRAINT [PK_UserStreetAddress];
+2024-04-13 23:54:51.630 -04:00 [INF] Executed DbCommand (171ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_rename N'[Users].[UserStreetAddress]', N'UserStreetAddresses';
+2024-04-13 23:54:51.634 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_rename N'[Users].[UserStreetAddresses].[IX_UserStreetAddress_ApplicationUserId]', N'IX_UserStreetAddresses_ApplicationUserId', N'INDEX';
+2024-04-13 23:54:51.654 -04:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users].[UserStreetAddresses] ADD CONSTRAINT [PK_UserStreetAddresses] PRIMARY KEY ([Id]);
+2024-04-13 23:54:51.660 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users].[UserStreetAddresses] ADD CONSTRAINT [FK_UserStreetAddresses_AspNetUsers_ApplicationUserId] FOREIGN KEY ([ApplicationUserId]) REFERENCES [Users].[AspNetUsers] ([Id]);
+2024-04-13 23:54:51.662 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240414035426_Update_UserAddresses', N'8.0.4');
+2024-04-13 23:55:05.717 -04:00 [INF] Registered 14 endpoints in 694 milliseconds.
+2024-04-13 23:55:05.854 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-13 23:55:05.939 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-13 23:55:05.940 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-13 23:55:05.940 -04:00 [INF] Hosting environment: Development
+2024-04-13 23:55:05.941 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-13 23:55:06.413 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-13 23:55:06.586 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 174.9031ms
+2024-04-13 23:55:06.937 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-13 23:55:06.954 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-13 23:55:07.277 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 340.0867ms
+2024-04-13 23:55:20.092 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/users/addresses - null 0
+2024-04-13 23:55:20.147 -04:00 [INF] Executing endpoint 'HTTP: GET /users/addresses'
+2024-04-13 23:55:28.807 -04:00 [INF] Executed DbCommand (42ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [u].[Id], [u].[ApplicationUserId], [u].[UserId], [u].[StreetAddress_City], [u].[StreetAddress_Country], [u].[StreetAddress_State], [u].[StreetAddress_Street], [u].[StreetAddress_Street2], [u].[StreetAddress_ZipCode]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[UserStreetAddresses] AS [u] ON [t].[Id] = [u].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 23:55:35.094 -04:00 [INF] Executed endpoint 'HTTP: GET /users/addresses'
+2024-04-13 23:55:35.100 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/users/addresses - 200 null application/json 15007.2487ms
+2024-04-13 23:55:50.513 -04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7149/orders/addresses - null 0
+2024-04-13 23:55:50.516 -04:00 [INF] Executing endpoint 'HTTP: DELETE /orders/addresses'
+2024-04-13 23:55:50.533 -04:00 [WRN] FLUSHED CACHE FOR REDIS
+2024-04-13 23:55:50.534 -04:00 [INF] Executed endpoint 'HTTP: DELETE /orders/addresses'
+2024-04-13 23:55:50.535 -04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7149/orders/addresses - 204 null null 22.0078ms
+2024-04-13 23:55:55.168 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/users/addresses - null 0
+2024-04-13 23:55:55.171 -04:00 [INF] Executing endpoint 'HTTP: GET /users/addresses'
+2024-04-13 23:55:58.415 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [u].[Id], [u].[ApplicationUserId], [u].[UserId], [u].[StreetAddress_City], [u].[StreetAddress_Country], [u].[StreetAddress_State], [u].[StreetAddress_Street], [u].[StreetAddress_Street2], [u].[StreetAddress_ZipCode]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[UserStreetAddresses] AS [u] ON [t].[Id] = [u].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 23:55:58.417 -04:00 [INF] Executed endpoint 'HTTP: GET /users/addresses'
+2024-04-13 23:55:58.418 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/users/addresses - 200 null application/json 3250.2439ms
+2024-04-13 23:56:36.161 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-13 23:56:36.164 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-13 23:56:36.192 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 23:56:36.207 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-13 23:56:36.209 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 47.3602ms
+2024-04-13 23:56:40.419 -04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7149/orders/addresses - null 0
+2024-04-13 23:56:40.421 -04:00 [INF] Executing endpoint 'HTTP: DELETE /orders/addresses'
+2024-04-13 23:56:40.430 -04:00 [WRN] FLUSHED CACHE FOR REDIS
+2024-04-13 23:56:40.431 -04:00 [INF] Executed endpoint 'HTTP: DELETE /orders/addresses'
+2024-04-13 23:56:40.432 -04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7149/orders/addresses - 204 null null 12.7409ms
+2024-04-13 23:57:07.627 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart/checkout - application/json 127
+2024-04-13 23:57:07.629 -04:00 [INF] Executing endpoint 'HTTP: POST /cart/checkout'
+2024-04-13 23:57:07.664 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-13 23:57:07.680 -04:00 [WRN] Address "90714529-408e-4d2f-9781-f392d2483098" not found in REDIS
+2024-04-13 23:57:07.682 -04:00 [INF] Address "90714529-408e-4d2f-9781-f392d2483098" not found; fetching from source.
+2024-04-13 23:57:07.692 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__addressId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[ApplicationUserId], [u].[UserId], [u].[StreetAddress_City], [u].[StreetAddress_Country], [u].[StreetAddress_State], [u].[StreetAddress_Street], [u].[StreetAddress_Street2], [u].[StreetAddress_ZipCode]
+FROM [Users].[UserStreetAddresses] AS [u]
+WHERE [u].[Id] = @__addressId_0
+2024-04-13 23:57:07.709 -04:00 [INF] Adress "90714529-408e-4d2f-9781-f392d2483098" stored in REDIS
+2024-04-13 23:57:07.712 -04:00 [INF] Address "90714529-408e-4d2f-9781-f392d2483098" returned from REDIS
+2024-04-13 23:57:07.845 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTimeOffset), @p2='?' (DbType = Guid), @p3='?' (Size = 50), @p4='?' (Size = 50), @p5='?' (Size = 20), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (Size = 50), @p9='?' (Size = 50), @p10='?' (Size = 50), @p11='?' (Size = 20), @p12='?' (Size = 50), @p13='?' (Size = 50), @p14='?' (Size = 50), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (Size = 100), @p18='?' (DbType = Guid), @p19='?' (DbType = Int32), @p20='?' (Precision = 18) (Scale = 6) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderProcessing].[Orders] ([Id], [DateCreated], [UserId], [BillingAddress_City], [BillingAddress_Country], [BillingAddress_PostalCode], [BillingAddress_State], [BillingAddress_Street1], [BillingAddress_Street2], [ShippingAddress_City], [ShippingAddress_Country], [ShippingAddress_PostalCode], [ShippingAddress_State], [ShippingAddress_Street1], [ShippingAddress_Street2])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+INSERT INTO [OrderProcessing].[OrderItem] ([Id], [BookId], [Description], [OrderId], [Quantity], [UnitPrice])
+VALUES (@p15, @p16, @p17, @p18, @p19, @p20);
+2024-04-13 23:57:07.871 -04:00 [INF] New Order Created! "266bd532-d085-4c27-8a20-9d5d66e99806"
+2024-04-13 23:57:07.903 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users].[CartItem] SET [ApplicationUserId] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-04-13 23:57:07.910 -04:00 [INF] Executed endpoint 'HTTP: POST /cart/checkout'
+2024-04-13 23:57:07.910 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart/checkout - 200 null null 283.2203ms

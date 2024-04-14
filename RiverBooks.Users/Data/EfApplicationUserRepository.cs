@@ -1,6 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RiverBooks.Users.Integrations;
 
 namespace RiverBooks.Users.Data;
+
+internal class EfUserStreetAddressRepository : IReadOnlyUserStreetAddressRepository
+{
+  private readonly UsersDbContext _dbContext;
+
+  public EfUserStreetAddressRepository(UsersDbContext dbContext)
+  {
+    _dbContext = dbContext;
+  }
+
+  public async Task<UserStreetAddress?> GetById(Guid addressId)
+  {
+    return await _dbContext.UserStreetAddresses.SingleOrDefaultAsync(a => a.Id == addressId);
+  }
+}
 
 internal class EfApplicationUserRepository : IApplicationUserRepository
 {

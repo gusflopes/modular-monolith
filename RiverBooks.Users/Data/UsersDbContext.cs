@@ -17,6 +17,7 @@ public class UsersDbContext : IdentityDbContext
   }
 
   public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+  public DbSet<UserStreetAddress> UserStreetAddresses { get; set; }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

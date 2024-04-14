@@ -23,7 +23,10 @@ public static class OrderProcessingModuleExtensions
       options.UseSqlServer(connectionString));
     
     services.AddScoped<IOrderRepository, EfOrderRepository>();
-    services.AddScoped<IOrderAddressCache, RedisOrderAddressCache>();
+    
+    // Added the concrete implementation of the cache, and then the interface on the decorator
+    services.AddScoped<RedisOrderAddressCache>();
+    services.AddScoped<IOrderAddressCache, ReadThroughOrderAddressCache>();
     
     // if using MediatR in this module, add any assemblies that contain handlers to the list
     mediatRAssemblies.Add(typeof(OrderProcessingModuleExtensions).Assembly);

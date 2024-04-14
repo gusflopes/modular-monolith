@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using RiverBooks.Users.Data;
+using RiverBooks.Users.Integrations;
 using Serilog;
 
 namespace RiverBooks.Users;
@@ -25,6 +26,7 @@ public static class UsersModuleExtensions
       .AddEntityFrameworkStores<UsersDbContext>();
 
     services.AddScoped<IApplicationUserRepository, EfApplicationUserRepository>();
+    services.AddScoped<IReadOnlyUserStreetAddressRepository, EfUserStreetAddressRepository>();
     
     // Add MediatR Domain Event Dispatcher
     services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();

@@ -83,9 +83,10 @@ Authorization: Bearer {{token}}
 
 ###
 
-@ShippingAddressID=1e3b40b1-a967-4450-9a22-77e70ed4c24a
-@BillingAddressID=1e3b40b1-a967-4450-9a22-77e70ed4c24a
+@ShippingAddressID=90714529-408e-4d2f-9781-f392d2483098
+@BillingAddressID=90714529-408e-4d2f-9781-f392d2483098
 
+# Checkout
 POST {{RiverBooks.Web_HostAddress}}/cart/checkout
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -126,3 +127,12 @@ Content-Type: application/json
   "ZipCode": "12345-678",
   "Country": "Brazil"
 }
+
+###
+
+# Flush Cache
+DELETE {{RiverBooks.Web_HostAddress}}/orders/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###

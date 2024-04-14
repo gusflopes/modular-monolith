@@ -5,8 +5,6 @@ using MediatR;
 
 namespace RiverBooks.OrderProcessing.Endpoints;
 
-public record OrderSummary(Guid OrderId, Guid UserId, DateTimeOffset DateCreated, DateTimeOffset DateShipped, decimal Total);
-
 public class ListOrdersForUser :EndpointWithoutRequest<ListOrdersForUserResponse>
 {
   private readonly IMediator _mediator;
