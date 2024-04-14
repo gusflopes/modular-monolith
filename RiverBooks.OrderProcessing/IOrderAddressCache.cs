@@ -10,6 +10,7 @@ namespace RiverBooks.OrderProcessing.Integrations;
 internal interface IOrderAddressCache
 {
   Task<Result<OrderAddress>> GetById(Guid addressId);
+  Task<Result> Store(OrderAddress orderAddress);
 }
 
 internal class RedisOrderAddressCache : IOrderAddressCache
@@ -41,5 +42,16 @@ internal class RedisOrderAddressCache : IOrderAddressCache
     
     _logger.LogInformation("Address {id} returned from {db}", addressId, "REDIS");
     return Result.Success(address);
+  }
+
+  public async Task<Result> Store(OrderAddress orderAddress)
+  {
+    var key = orderAddress.Id.ToString();
+    var addressJson = JsonSerializer.Serialize(orderAddress);
+    
+    await _db.StringSetAsync(key, addressJson);
+    _logger.LogInformation("Adress {id} stored in {db}", orderAddress.Id, "REDIS");
+
+    return Result.Success();
   }
 }
