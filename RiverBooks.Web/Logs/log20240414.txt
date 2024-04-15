@@ -75,3 +75,118 @@
 2024-04-14 09:45:14.344 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
 2024-04-14 09:45:14.358 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
 2024-04-14 09:45:14.681 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 336.3626ms
+2024-04-14 22:44:52.482 -04:00 [INF] Registered 14 endpoints in 1.610 milliseconds.
+2024-04-14 22:44:52.805 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 22:44:53.062 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-14 22:44:53.062 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-14 22:44:53.062 -04:00 [INF] Hosting environment: Development
+2024-04-14 22:44:53.062 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-14 22:44:53.403 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-14 22:44:53.704 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 303.2606ms
+2024-04-14 22:44:53.724 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.css - null null
+2024-04-14 22:44:53.724 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/swagger-ui-bundle.js - null null
+2024-04-14 22:44:53.724 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/swagger-ui.css - null null
+2024-04-14 22:44:53.725 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/swagger-ui-standalone-preset.js - null null
+2024-04-14 22:44:53.739 -04:00 [INF] The file /swagger-ui-bundle.js was not modified
+2024-04-14 22:44:53.739 -04:00 [INF] The file /index.css was not modified
+2024-04-14 22:44:53.739 -04:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2024-04-14 22:44:53.739 -04:00 [INF] The file /swagger-ui.css was not modified
+2024-04-14 22:44:53.741 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/swagger-ui.css - 304 null text/css 17.0125ms
+2024-04-14 22:44:53.741 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/swagger-ui-standalone-preset.js - 304 null text/javascript 16.4042ms
+2024-04-14 22:44:53.741 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/swagger-ui-bundle.js - 304 null text/javascript 16.935ms
+2024-04-14 22:44:53.741 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.css - 304 null text/css 16.9239ms
+2024-04-14 22:44:54.412 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-14 22:44:54.426 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-14 22:44:54.844 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 432.2359ms
+2024-04-14 22:45:05.697 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-14 22:45:05.738 -04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '14/04/2024 03:58:13', Current time (UTC): '15/04/2024 02:45:05'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-04-14 22:45:05.763 -04:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '14/04/2024 03:58:13', Current time (UTC): '15/04/2024 02:45:05'.
+2024-04-14 22:45:05.766 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+Handler assertion should evaluate to true.
+2024-04-14 22:45:05.769 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-14 22:45:05.770 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 401 0 null 72.9455ms
+2024-04-14 22:45:10.971 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users/login - application/json 68
+2024-04-14 22:45:10.974 -04:00 [INF] Executing endpoint 'HTTP: POST /users/login'
+2024-04-14 22:45:12.341 -04:00 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-14 22:45:12.486 -04:00 [INF] Executed endpoint 'HTTP: POST /users/login'
+2024-04-14 22:45:12.492 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users/login - 200 null application/json 1521.2014ms
+2024-04-14 22:45:25.664 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-14 22:45:25.673 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-14 22:45:25.708 -04:00 [INF] Handling AddItemToCartCommand
+2024-04-14 22:45:25.708 -04:00 [INF] Property BookId : "741f0053-d934-4868-a890-f40217a5b1c5"
+2024-04-14 22:45:25.709 -04:00 [INF] Property Quantity : 1
+2024-04-14 22:45:25.709 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-14 22:45:25.818 -04:00 [INF] Executed DbCommand (21ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-14 22:45:25.830 -04:00 [INF] Handling GetBookDetailsQuery
+2024-04-14 22:45:25.830 -04:00 [INF] Property BookId : "741f0053-d934-4868-a890-f40217a5b1c5"
+2024-04-14 22:45:25.863 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[Price], [b].[Title]
+FROM [Books].[Books] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2024-04-14 22:45:25.874 -04:00 [INF] Handled GetBookDetailsQuery with Ardalis.Result.Result`1[RiverBooks.Books.Contracts.BookDetailsResponse] in 43 ms
+2024-04-14 22:45:25.975 -04:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Precision = 18) (Scale = 6) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users].[CartItem] ([Id], [ApplicationUserId], [BookId], [Description], [Quantity], [UnitPrice])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-04-14 22:45:25.989 -04:00 [INF] Handled AddItemToCartCommand with Ardalis.Result.Result in 280 ms
+2024-04-14 22:45:25.991 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-14 22:45:25.992 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 200 null null 328.053ms
+2024-04-14 22:50:22.335 -04:00 [INF] Registered 14 endpoints in 691 milliseconds.
+2024-04-14 22:50:22.484 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 22:50:22.592 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-14 22:50:22.592 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-14 22:50:22.592 -04:00 [INF] Hosting environment: Development
+2024-04-14 22:50:22.592 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-14 22:50:23.201 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-14 22:50:23.377 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 178.6896ms
+2024-04-14 22:50:23.936 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-14 22:50:23.948 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-14 22:50:24.336 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 400.0052ms
+2024-04-14 22:50:29.163 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-14 22:50:29.215 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-14 22:50:29.272 -04:00 [INF] Handling AddItemToCartCommand
+2024-04-14 22:50:29.272 -04:00 [INF] Property BookId : "741f0053-d934-4868-a890-f40217a5b1c5"
+2024-04-14 22:50:29.273 -04:00 [INF] Property Quantity : 1
+2024-04-14 22:50:29.273 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-14 22:50:30.240 -04:00 [INF] Executed DbCommand (33ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-14 22:50:30.310 -04:00 [INF] Handling GetBookDetailsQuery
+2024-04-14 22:50:30.310 -04:00 [INF] Property BookId : "741f0053-d934-4868-a890-f40217a5b1c5"
+2024-04-14 22:50:30.345 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[Price], [b].[Title]
+FROM [Books].[Books] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2024-04-14 22:50:30.352 -04:00 [INF] Handled GetBookDetailsQuery with Ardalis.Result.Result`1[RiverBooks.Books.Contracts.BookDetailsResponse] in 41 ms
+2024-04-14 22:50:30.422 -04:00 [INF] Executed DbCommand (15ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users].[CartItem] SET [Quantity] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-04-14 22:50:30.436 -04:00 [INF] Handled AddItemToCartCommand with Ardalis.Result.Result in 1162 ms
+2024-04-14 22:50:30.438 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-14 22:50:30.444 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 200 null null 1280.6622ms
