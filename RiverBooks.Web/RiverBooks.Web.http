@@ -58,11 +58,7 @@ Content-Type: application/json
 
 ###
 
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJndXNmbG9wZXNAaHVibGF3LmNvbS5iciIsImlzcyI6IlJpdmVyQm9va3MiLCJpYXQiOjE3MTMxNDkxMTIsImV4cCI6MTcxMzE1MjcxMiwibmJmIjoxNzEzMTQ5MTEyfQ.C2Q7rhIiAoKNIZhVr9IpjvwsYK7DnyjTjv7WIzZPqC8
-
-
-
-
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJndXNmbG9wZXNAaHVibGF3LmNvbS5iciIsImlzcyI6IlJpdmVyQm9va3MiLCJpYXQiOjE3MTM4MzgyNTMsImV4cCI6MTcxMzg0MTg1MywibmJmIjoxNzEzODM4MjUzfQ.aHBdYXOc3Pi34C6GGVtIFGSpjtV2zLC24ZbUbvVyyW8
 
 # Add Item to Cart
 POST {{RiverBooks.Web_HostAddress}}/cart
@@ -133,6 +129,13 @@ Content-Type: application/json
 
 # Flush Cache
 DELETE {{RiverBooks.Web_HostAddress}}/orders/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# List Emails
+GET {{RiverBooks.Web_HostAddress}}/emails
 Accept: application/json
 Authorization: Bearer {{token}}
 

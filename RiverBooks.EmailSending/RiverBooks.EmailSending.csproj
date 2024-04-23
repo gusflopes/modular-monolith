@@ -8,9 +8,11 @@
 
     <ItemGroup>
       <PackageReference Include="MailKit" Version="4.5.0" />
+      <PackageReference Include="FastEndpoints" Version="5.24.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
       <PackageReference Include="MimeKit" Version="4.5.0" />
+      <PackageReference Include="MongoDB.Driver" Version="2.25.0" />
       <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
       <PackageReference Include="Ardalis.GuardClauses" Version="4.4.0" />
       <PackageReference Include="Ardalis.Result" Version="8.0.0" />
