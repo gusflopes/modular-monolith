@@ -115,3 +115,353 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13
 2024-04-22 20:21:59.445 -04:00 [INF] Property Body : Thank you for registering.
 2024-04-22 20:21:59.473 -04:00 [INF] Attempting to send email to gusflopes1@hublaw.com.br from donotreply@hublaw.app with subject Welcome to RiverBooks!
 2024-04-22 20:21:59.619 -04:00 [INF] Email sent!
+2024-04-22 22:09:38.856 -04:00 [INF] Registered 15 endpoints in 907 milliseconds.
+2024-04-22 22:09:38.995 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 22:09:39.089 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-22 22:09:39.090 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 22:09:39.090 -04:00 [INF] Hosting environment: Development
+2024-04-22 22:09:39.090 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-22 22:09:39.358 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-22 22:09:39.522 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 166.7207ms
+2024-04-22 22:09:39.824 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-22 22:09:39.837 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-22 22:09:40.161 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 336.8739ms
+2024-04-22 22:10:32.657 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/emails - null 0
+2024-04-22 22:10:32.696 -04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '15/04/2024 03:45:12', Current time (UTC): '23/04/2024 02:10:32'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-04-22 22:10:32.707 -04:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '15/04/2024 03:45:12', Current time (UTC): '23/04/2024 02:10:32'.
+2024-04-22 22:10:32.708 -04:00 [INF] Executing endpoint 'HTTP: GET /emails'
+2024-04-22 22:10:32.841 -04:00 [INF] Executed endpoint 'HTTP: GET /emails'
+2024-04-22 22:10:32.841 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/emails - 200 null application/json 186.2793ms
+2024-04-22 22:10:41.938 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-22 22:10:41.939 -04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '15/04/2024 03:45:12', Current time (UTC): '23/04/2024 02:10:41'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-04-22 22:10:41.940 -04:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '15/04/2024 03:45:12', Current time (UTC): '23/04/2024 02:10:41'.
+2024-04-22 22:10:41.945 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+Handler assertion should evaluate to true.
+2024-04-22 22:10:41.949 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-22 22:10:41.949 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 401 0 null 11.3039ms
+2024-04-22 22:10:52.812 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users/login - application/json 68
+2024-04-22 22:10:52.813 -04:00 [INF] Executing endpoint 'HTTP: POST /users/login'
+2024-04-22 22:10:53.751 -04:00 [INF] Executed DbCommand (36ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-22 22:10:53.863 -04:00 [INF] Executed endpoint 'HTTP: POST /users/login'
+2024-04-22 22:10:53.868 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users/login - 200 null application/json 1056.7059ms
+2024-04-22 22:11:08.648 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-22 22:11:08.658 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-22 22:11:08.679 -04:00 [INF] Handling ListCartItemsQuery
+2024-04-22 22:11:08.679 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:11:08.804 -04:00 [INF] Executed DbCommand (29ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-22 22:11:08.828 -04:00 [INF] Handled ListCartItemsQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[RiverBooks.Users.CartEndpoints.CartItemDto]] in 148 ms
+2024-04-22 22:11:08.835 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-22 22:11:08.835 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 187.781ms
+2024-04-22 22:11:09.053 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-22 22:11:09.054 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-22 22:11:09.054 -04:00 [INF] Handling ListCartItemsQuery
+2024-04-22 22:11:09.054 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:11:09.060 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-22 22:11:09.061 -04:00 [INF] Handled ListCartItemsQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[RiverBooks.Users.CartEndpoints.CartItemDto]] in 6 ms
+2024-04-22 22:11:09.061 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-22 22:11:09.062 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 9.313ms
+2024-04-22 22:11:19.110 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart/checkout - application/json 127
+2024-04-22 22:11:19.112 -04:00 [INF] Executing endpoint 'HTTP: POST /cart/checkout'
+2024-04-22 22:11:19.120 -04:00 [INF] Handling CheckoutCartCommand
+2024-04-22 22:11:19.120 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:11:19.121 -04:00 [INF] Property ShippingAddressId : "90714529-408e-4d2f-9781-f392d2483098"
+2024-04-22 22:11:19.121 -04:00 [INF] Property BillingAddressId : "90714529-408e-4d2f-9781-f392d2483098"
+2024-04-22 22:11:19.125 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-22 22:11:19.127 -04:00 [INF] Handling CreateOrderCommand
+2024-04-22 22:11:19.127 -04:00 [INF] Property UserId : "0e2c5aa9-9cd2-4680-95f7-0698bd88cda0"
+2024-04-22 22:11:19.128 -04:00 [INF] Property ShippingAddressId : "90714529-408e-4d2f-9781-f392d2483098"
+2024-04-22 22:11:19.128 -04:00 [INF] Property BillingAddressId : "90714529-408e-4d2f-9781-f392d2483098"
+2024-04-22 22:11:19.130 -04:00 [INF] Property OrderItems : [{"BookId":"741f0053-d934-4868-a890-f40217a5b1c5","Quantity":2,"UnitPrice":9.990000,"Description":"The Fellowship of the Ring by J.R.R. Tolkien","$type":"OrderItemDetails"}]
+2024-04-22 22:11:19.150 -04:00 [INF] Address "90714529-408e-4d2f-9781-f392d2483098" returned from REDIS
+2024-04-22 22:11:19.152 -04:00 [INF] Address "90714529-408e-4d2f-9781-f392d2483098" returned from REDIS
+2024-04-22 22:11:19.293 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTimeOffset), @p2='?' (DbType = Guid), @p3='?' (Size = 50), @p4='?' (Size = 50), @p5='?' (Size = 20), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (Size = 50), @p9='?' (Size = 50), @p10='?' (Size = 50), @p11='?' (Size = 20), @p12='?' (Size = 50), @p13='?' (Size = 50), @p14='?' (Size = 50), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (Size = 100), @p18='?' (DbType = Guid), @p19='?' (DbType = Int32), @p20='?' (Precision = 18) (Scale = 6) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderProcessing].[Orders] ([Id], [DateCreated], [UserId], [BillingAddress_City], [BillingAddress_Country], [BillingAddress_PostalCode], [BillingAddress_State], [BillingAddress_Street1], [BillingAddress_Street2], [ShippingAddress_City], [ShippingAddress_Country], [ShippingAddress_PostalCode], [ShippingAddress_State], [ShippingAddress_Street1], [ShippingAddress_Street2])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+INSERT INTO [OrderProcessing].[OrderItem] ([Id], [BookId], [Description], [OrderId], [Quantity], [UnitPrice])
+VALUES (@p15, @p16, @p17, @p18, @p19, @p20);
+2024-04-22 22:11:19.314 -04:00 [INF] Handling UserDetailsByIdQuery
+2024-04-22 22:11:19.315 -04:00 [INF] Property UserId : "0e2c5aa9-9cd2-4680-95f7-0698bd88cda0"
+2024-04-22 22:11:19.316 -04:00 [INF] Handling GetUserByIdQuery
+2024-04-22 22:11:19.316 -04:00 [INF] Property UserId : "0e2c5aa9-9cd2-4680-95f7-0698bd88cda0"
+2024-04-22 22:11:19.326 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToString_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Id] = @__ToString_0
+2024-04-22 22:11:19.327 -04:00 [INF] Handled GetUserByIdQuery with Ardalis.Result.Result`1[RiverBooks.Users.UseCases.UserDto] in 10 ms
+2024-04-22 22:11:19.328 -04:00 [INF] Handled UserDetailsByIdQuery with Ardalis.Result.Result`1[RiverBooks.Users.Contracts.UserDetails] in 13 ms
+2024-04-22 22:11:19.329 -04:00 [INF] Handling SendEmailCommand
+2024-04-22 22:11:19.329 -04:00 [INF] Property To : gusflopes@hublaw.com.br
+2024-04-22 22:11:19.329 -04:00 [INF] Property From : noreply@test.com
+2024-04-22 22:11:19.330 -04:00 [INF] Property Subject : Your RiverBooks purchase
+2024-04-22 22:11:19.330 -04:00 [INF] Property Body : You bought 1 items.
+2024-04-22 22:11:19.380 -04:00 [INF] Handled SendEmailCommand with Ardalis.Result.Result`1[System.Guid] in 49 ms
+2024-04-22 22:11:19.380 -04:00 [INF] New Order Created! "09bc9e82-b4ef-46fd-b4f1-fd27fafa66a3"
+2024-04-22 22:11:19.381 -04:00 [INF] Handled CreateOrderCommand with Ardalis.Result.Result`1[RiverBooks.OrderProcessing.Contracts.OrderDetailsResponse] in 248 ms
+2024-04-22 22:11:19.414 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users].[CartItem] SET [ApplicationUserId] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-04-22 22:11:19.418 -04:00 [INF] Handled CheckoutCartCommand with Ardalis.Result.Result`1[System.Guid] in 297 ms
+2024-04-22 22:11:19.420 -04:00 [INF] Executed endpoint 'HTTP: POST /cart/checkout'
+2024-04-22 22:11:19.420 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart/checkout - 200 null null 309.8895ms
+2024-04-22 22:11:22.056 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-22 22:11:22.056 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-22 22:11:22.057 -04:00 [INF] Handling ListCartItemsQuery
+2024-04-22 22:11:22.057 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:11:22.061 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-22 22:11:22.062 -04:00 [INF] Handled ListCartItemsQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[RiverBooks.Users.CartEndpoints.CartItemDto]] in 4 ms
+2024-04-22 22:11:22.063 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-22 22:11:22.063 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 7.419ms
+2024-04-22 22:11:26.523 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/emails - null 0
+2024-04-22 22:11:26.524 -04:00 [INF] Executing endpoint 'HTTP: GET /emails'
+2024-04-22 22:11:26.535 -04:00 [INF] Executed endpoint 'HTTP: GET /emails'
+2024-04-22 22:11:26.535 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/emails - 200 null application/json 12.7033ms
+2024-04-22 22:36:56.762 -04:00 [INF] Registered 15 endpoints in 901 milliseconds.
+2024-04-22 22:36:56.907 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 22:36:56.923 -04:00 [INF] EmailSendingBackgroundService starting...
+2024-04-22 22:36:56.923 -04:00 [INF] Doing work...
+2024-04-22 22:36:57.068 -04:00 [INF] Attempting to send email to gusflopes@hublaw.com.br from noreply@test.com with subject Your RiverBooks purchase
+2024-04-22 22:36:57.083 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-22 22:36:57.083 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 22:36:57.083 -04:00 [INF] Hosting environment: Development
+2024-04-22 22:36:57.083 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-22 22:36:57.597 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-22 22:36:57.761 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 166.9348ms
+2024-04-22 22:36:58.070 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-22 22:36:58.083 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-22 22:36:58.403 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 333.3321ms
+2024-04-22 22:37:01.425 -04:00 [ERR] Error processing outbox: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-04-22 22:37:11.427 -04:00 [INF] Doing work...
+2024-04-22 22:37:11.439 -04:00 [INF] Attempting to send email to gusflopes@hublaw.com.br from noreply@test.com with subject Your RiverBooks purchase
+2024-04-22 22:37:15.646 -04:00 [ERR] Error processing outbox: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-04-22 22:37:25.652 -04:00 [INF] Doing work...
+2024-04-22 22:37:25.663 -04:00 [INF] Attempting to send email to gusflopes@hublaw.com.br from noreply@test.com with subject Your RiverBooks purchase
+2024-04-22 22:37:25.815 -04:00 [INF] Email sent!
+2024-04-22 22:41:15.428 -04:00 [INF] Registered 15 endpoints in 866 milliseconds.
+2024-04-22 22:41:15.556 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 22:41:15.572 -04:00 [INF] EmailSendingBackgroundService starting...
+2024-04-22 22:41:15.572 -04:00 [INF] Doing work...
+2024-04-22 22:41:15.715 -04:00 [INF] Attempting to send email to gusflopes@hublaw.com.br from noreply@test.com with subject Your RiverBooks purchase
+2024-04-22 22:41:15.730 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-22 22:41:15.731 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 22:41:15.731 -04:00 [INF] Hosting environment: Development
+2024-04-22 22:41:15.731 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-22 22:41:15.834 -04:00 [INF] Email sent!
+2024-04-22 22:41:16.395 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-22 22:41:16.585 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 193.1299ms
+2024-04-22 22:41:16.882 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-22 22:41:16.898 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-22 22:41:17.219 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 337.1666ms
+2024-04-22 22:42:12.041 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-22 22:42:12.088 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-22 22:42:12.118 -04:00 [INF] Handling ListCartItemsQuery
+2024-04-22 22:42:12.119 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:42:13.060 -04:00 [INF] Executed DbCommand (34ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-22 22:42:13.118 -04:00 [INF] Handled ListCartItemsQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[RiverBooks.Users.CartEndpoints.CartItemDto]] in 999 ms
+2024-04-22 22:42:13.136 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-22 22:42:13.142 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 1100.732ms
+2024-04-22 22:42:16.178 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-22 22:42:16.181 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-22 22:42:16.232 -04:00 [INF] Handling AddItemToCartCommand
+2024-04-22 22:42:16.232 -04:00 [INF] Property BookId : "741f0053-d934-4868-a890-f40217a5b1c5"
+2024-04-22 22:42:16.233 -04:00 [INF] Property Quantity : 0
+2024-04-22 22:42:16.233 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:42:16.270 -04:00 [INF] Handled AddItemToCartCommand with Ardalis.Result.Result in 36 ms
+2024-04-22 22:42:16.279 -04:00 [INF] Setting HTTP status code 400.
+2024-04-22 22:42:16.280 -04:00 [INF] Writing value of type 'ObservableCollection`1' as Json.
+2024-04-22 22:42:16.288 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-22 22:42:16.288 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 400 null application/json; charset=utf-8 110.7324ms
+2024-04-22 22:42:19.516 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-22 22:42:19.516 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-22 22:42:19.517 -04:00 [INF] Handling ListCartItemsQuery
+2024-04-22 22:42:19.517 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:42:19.531 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-22 22:42:19.531 -04:00 [INF] Handled ListCartItemsQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[RiverBooks.Users.CartEndpoints.CartItemDto]] in 14 ms
+2024-04-22 22:42:19.532 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-22 22:42:19.532 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 16.6382ms
+2024-04-22 22:42:22.182 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-22 22:42:22.186 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-22 22:42:22.190 -04:00 [INF] Handling AddItemToCartCommand
+2024-04-22 22:42:22.190 -04:00 [INF] Property BookId : "741f0053-d934-4868-a890-f40217a5b1c5"
+2024-04-22 22:42:22.190 -04:00 [INF] Property Quantity : 0
+2024-04-22 22:42:22.191 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:42:22.191 -04:00 [INF] Handled AddItemToCartCommand with Ardalis.Result.Result in 0 ms
+2024-04-22 22:42:22.191 -04:00 [INF] Setting HTTP status code 400.
+2024-04-22 22:42:22.191 -04:00 [INF] Writing value of type 'ObservableCollection`1' as Json.
+2024-04-22 22:42:22.192 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-22 22:42:22.192 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 400 null application/json; charset=utf-8 10.485ms
+2024-04-22 22:42:31.506 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-22 22:42:31.506 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-22 22:42:31.507 -04:00 [INF] Handling AddItemToCartCommand
+2024-04-22 22:42:31.507 -04:00 [INF] Property BookId : "741f0053-d934-4868-a890-f40217a5b1c5"
+2024-04-22 22:42:31.507 -04:00 [INF] Property Quantity : 1
+2024-04-22 22:42:31.508 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:42:31.522 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-22 22:42:31.524 -04:00 [INF] Handling GetBookDetailsQuery
+2024-04-22 22:42:31.525 -04:00 [INF] Property BookId : "741f0053-d934-4868-a890-f40217a5b1c5"
+2024-04-22 22:42:31.577 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[Price], [b].[Title]
+FROM [Books].[Books] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2024-04-22 22:42:31.587 -04:00 [INF] Handled GetBookDetailsQuery with Ardalis.Result.Result`1[RiverBooks.Books.Contracts.BookDetailsResponse] in 62 ms
+2024-04-22 22:42:31.693 -04:00 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Precision = 18) (Scale = 6) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users].[CartItem] ([Id], [ApplicationUserId], [BookId], [Description], [Quantity], [UnitPrice])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-04-22 22:42:31.705 -04:00 [INF] Handled AddItemToCartCommand with Ardalis.Result.Result in 196 ms
+2024-04-22 22:42:31.706 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-22 22:42:31.706 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 200 null null 200.6998ms
+2024-04-22 22:42:34.195 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/cart - null 0
+2024-04-22 22:42:34.196 -04:00 [INF] Executing endpoint 'HTTP: GET /cart'
+2024-04-22 22:42:34.196 -04:00 [INF] Handling ListCartItemsQuery
+2024-04-22 22:42:34.197 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:42:34.200 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-22 22:42:34.202 -04:00 [INF] Handled ListCartItemsQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[RiverBooks.Users.CartEndpoints.CartItemDto]] in 5 ms
+2024-04-22 22:42:34.206 -04:00 [INF] Executed endpoint 'HTTP: GET /cart'
+2024-04-22 22:42:34.206 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/cart - 200 null application/json 10.9468ms
+2024-04-22 22:42:37.302 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart/checkout - application/json 127
+2024-04-22 22:42:37.304 -04:00 [INF] Executing endpoint 'HTTP: POST /cart/checkout'
+2024-04-22 22:42:37.309 -04:00 [INF] Handling CheckoutCartCommand
+2024-04-22 22:42:37.309 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-22 22:42:37.310 -04:00 [INF] Property ShippingAddressId : "90714529-408e-4d2f-9781-f392d2483098"
+2024-04-22 22:42:37.310 -04:00 [INF] Property BillingAddressId : "90714529-408e-4d2f-9781-f392d2483098"
+2024-04-22 22:42:37.314 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FullName], [c].[Id], [c].[ApplicationUserId], [c].[BookId], [c].[Description], [c].[Quantity], [c].[UnitPrice]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+    FROM [Users].[AspNetUsers] AS [a]
+    WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Email] = @__email_0
+) AS [t]
+LEFT JOIN [Users].[CartItem] AS [c] ON [t].[Id] = [c].[ApplicationUserId]
+ORDER BY [t].[Id]
+2024-04-22 22:42:37.316 -04:00 [INF] Handling CreateOrderCommand
+2024-04-22 22:42:37.317 -04:00 [INF] Property UserId : "0e2c5aa9-9cd2-4680-95f7-0698bd88cda0"
+2024-04-22 22:42:37.317 -04:00 [INF] Property ShippingAddressId : "90714529-408e-4d2f-9781-f392d2483098"
+2024-04-22 22:42:37.317 -04:00 [INF] Property BillingAddressId : "90714529-408e-4d2f-9781-f392d2483098"
+2024-04-22 22:42:37.319 -04:00 [INF] Property OrderItems : [{"BookId":"741f0053-d934-4868-a890-f40217a5b1c5","Quantity":1,"UnitPrice":9.990000,"Description":"The Fellowship of the Ring by J.R.R. Tolkien","$type":"OrderItemDetails"}]
+2024-04-22 22:42:37.337 -04:00 [INF] Address "90714529-408e-4d2f-9781-f392d2483098" returned from REDIS
+2024-04-22 22:42:37.339 -04:00 [INF] Address "90714529-408e-4d2f-9781-f392d2483098" returned from REDIS
+2024-04-22 22:42:37.415 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTimeOffset), @p2='?' (DbType = Guid), @p3='?' (Size = 50), @p4='?' (Size = 50), @p5='?' (Size = 20), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (Size = 50), @p9='?' (Size = 50), @p10='?' (Size = 50), @p11='?' (Size = 20), @p12='?' (Size = 50), @p13='?' (Size = 50), @p14='?' (Size = 50), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (Size = 100), @p18='?' (DbType = Guid), @p19='?' (DbType = Int32), @p20='?' (Precision = 18) (Scale = 6) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderProcessing].[Orders] ([Id], [DateCreated], [UserId], [BillingAddress_City], [BillingAddress_Country], [BillingAddress_PostalCode], [BillingAddress_State], [BillingAddress_Street1], [BillingAddress_Street2], [ShippingAddress_City], [ShippingAddress_Country], [ShippingAddress_PostalCode], [ShippingAddress_State], [ShippingAddress_Street1], [ShippingAddress_Street2])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+INSERT INTO [OrderProcessing].[OrderItem] ([Id], [BookId], [Description], [OrderId], [Quantity], [UnitPrice])
+VALUES (@p15, @p16, @p17, @p18, @p19, @p20);
+2024-04-22 22:42:37.428 -04:00 [INF] Handling UserDetailsByIdQuery
+2024-04-22 22:42:37.429 -04:00 [INF] Property UserId : "0e2c5aa9-9cd2-4680-95f7-0698bd88cda0"
+2024-04-22 22:42:37.430 -04:00 [INF] Handling GetUserByIdQuery
+2024-04-22 22:42:37.430 -04:00 [INF] Property UserId : "0e2c5aa9-9cd2-4680-95f7-0698bd88cda0"
+2024-04-22 22:42:37.436 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ToString_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[Id] = @__ToString_0
+2024-04-22 22:42:37.437 -04:00 [INF] Handled GetUserByIdQuery with Ardalis.Result.Result`1[RiverBooks.Users.UseCases.UserDto] in 6 ms
+2024-04-22 22:42:37.438 -04:00 [INF] Handled UserDetailsByIdQuery with Ardalis.Result.Result`1[RiverBooks.Users.Contracts.UserDetails] in 9 ms
+2024-04-22 22:42:37.440 -04:00 [INF] Handling SendEmailCommand
+2024-04-22 22:42:37.440 -04:00 [INF] Property To : gusflopes@hublaw.com.br
+2024-04-22 22:42:37.440 -04:00 [INF] Property From : noreply@test.com
+2024-04-22 22:42:37.441 -04:00 [INF] Property Subject : Your RiverBooks purchase
+2024-04-22 22:42:37.441 -04:00 [INF] Property Body : You bought 1 items.
+2024-04-22 22:42:37.483 -04:00 [INF] Handled SendEmailCommand with Ardalis.Result.Result`1[System.Guid] in 42 ms
+2024-04-22 22:42:37.484 -04:00 [INF] New Order Created! "b57e550e-2f9d-4f8e-942e-b898a3ac21ae"
+2024-04-22 22:42:37.484 -04:00 [INF] Handled CreateOrderCommand with Ardalis.Result.Result`1[RiverBooks.OrderProcessing.Contracts.OrderDetailsResponse] in 162 ms
+2024-04-22 22:42:37.497 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users].[CartItem] SET [ApplicationUserId] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-04-22 22:42:37.500 -04:00 [INF] Handled CheckoutCartCommand with Ardalis.Result.Result`1[System.Guid] in 189 ms
+2024-04-22 22:42:37.500 -04:00 [INF] Executed endpoint 'HTTP: POST /cart/checkout'
+2024-04-22 22:42:37.501 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart/checkout - 200 null null 198.4747ms
+2024-04-22 22:43:15.863 -04:00 [INF] Processed 1 email records.
+2024-04-22 22:43:15.864 -04:00 [INF] Sleeping...
+2024-04-22 22:43:25.876 -04:00 [INF] Doing work...
+2024-04-22 22:43:25.883 -04:00 [INF] Attempting to send email to gusflopes@hublaw.com.br from noreply@test.com with subject Your RiverBooks purchase
+2024-04-22 22:43:25.939 -04:00 [INF] Email sent!
+2024-04-22 22:45:25.960 -04:00 [INF] Processed 1 email records.
+2024-04-22 22:45:25.961 -04:00 [INF] Sleeping...
+2024-04-22 22:45:38.155 -04:00 [INF] Sleeping...
+2024-04-22 22:45:48.172 -04:00 [INF] Sleeping...
+2024-04-22 22:45:58.181 -04:00 [INF] Sleeping...
+2024-04-22 22:46:08.190 -04:00 [INF] Sleeping...

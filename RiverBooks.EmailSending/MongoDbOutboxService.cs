@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using Ardalis.Result;
+using MongoDB.Driver;
 
 namespace RiverBooks.EmailSending;
 
@@ -14,5 +15,18 @@ internal class MongoDbOutboxService : IOutboxService
   public async Task QueueEmailForSending(EmailOutboxEntity entity)
   {
     await _emailCollection.InsertOneAsync(entity);
+  }
+
+  public async Task<Result<EmailOutboxEntity>> GetUnprocessedEmailEntity()
+  {
+    var filter = Builders<EmailOutboxEntity>.Filter.Eq(entity =>
+      entity.DateTimeUtcProcessed, null);
+    var unsentEmailEntity = await _emailCollection
+      .Find(filter)
+      .FirstOrDefaultAsync();
+
+    if (unsentEmailEntity == null) return Result.NotFound();
+
+    return unsentEmailEntity;
   }
 }
