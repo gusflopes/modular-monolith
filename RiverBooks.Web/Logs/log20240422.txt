@@ -1,0 +1,117 @@
+2024-04-22 20:12:17.047 -04:00 [INF] Registered 14 endpoints in 708 milliseconds.
+2024-04-22 20:12:17.566 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 20:12:17.947 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-22 20:12:17.948 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 20:12:17.948 -04:00 [INF] Hosting environment: Development
+2024-04-22 20:12:17.948 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-22 20:12:18.200 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-22 20:12:18.565 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 369.3528ms
+2024-04-22 20:12:18.584 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.css - null null
+2024-04-22 20:12:18.584 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/swagger-ui.css - null null
+2024-04-22 20:12:18.586 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/swagger-ui-bundle.js - null null
+2024-04-22 20:12:18.586 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/swagger-ui-standalone-preset.js - null null
+2024-04-22 20:12:18.590 -04:00 [INF] The file /swagger-ui-bundle.js was not modified
+2024-04-22 20:12:18.590 -04:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2024-04-22 20:12:18.590 -04:00 [INF] The file /swagger-ui.css was not modified
+2024-04-22 20:12:18.590 -04:00 [INF] The file /index.css was not modified
+2024-04-22 20:12:18.591 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.css - 304 null text/css 7.1563ms
+2024-04-22 20:12:18.591 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/swagger-ui.css - 304 null text/css 7.1801ms
+2024-04-22 20:12:18.591 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/swagger-ui-bundle.js - 304 null text/javascript 5.558ms
+2024-04-22 20:12:18.591 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/swagger-ui-standalone-preset.js - 304 null text/javascript 5.3303ms
+2024-04-22 20:12:19.114 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-22 20:12:19.114 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/favicon-32x32.png - null null
+2024-04-22 20:12:19.119 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-04-22 20:12:19.119 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/favicon-32x32.png - 200 628 image/png 5.8292ms
+2024-04-22 20:12:19.131 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-22 20:12:19.498 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 384.3547ms
+2024-04-22 20:12:23.472 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users - application/json 62
+2024-04-22 20:12:23.475 -04:00 [INF] Executing endpoint 'HTTP: POST /users'
+2024-04-22 20:12:23.561 -04:00 [INF] Handling CreateUserCommand
+2024-04-22 20:12:23.562 -04:00 [INF] Property Email : gusflopes@hublaw.com.br
+2024-04-22 20:12:23.562 -04:00 [INF] Property Password : Pass
+2024-04-22 20:12:24.852 -04:00 [INF] Executed DbCommand (74ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-04-22 20:12:24.928 -04:00 [INF] Handled CreateUserCommand with Ardalis.Result.Result in 1365 ms
+2024-04-22 20:12:24.966 -04:00 [INF] Setting HTTP status code 422.
+2024-04-22 20:12:24.974 -04:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-04-22 20:12:24.984 -04:00 [INF] Executed endpoint 'HTTP: POST /users'
+2024-04-22 20:12:24.992 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users - 422 null application/json; charset=utf-8 1520.4457ms
+2024-04-22 20:12:39.258 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users - application/json 63
+2024-04-22 20:12:39.259 -04:00 [INF] Executing endpoint 'HTTP: POST /users'
+2024-04-22 20:12:39.260 -04:00 [INF] Handling CreateUserCommand
+2024-04-22 20:12:39.260 -04:00 [INF] Property Email : gusflopes@hublwaw.com.br
+2024-04-22 20:12:39.260 -04:00 [INF] Property Password : Pass
+2024-04-22 20:12:39.278 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-04-22 20:12:39.379 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 21), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users].[AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Discriminator], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2024-04-22 20:12:39.389 -04:00 [INF] Handled CreateUserCommand with Ardalis.Result.Result in 128 ms
+2024-04-22 20:12:39.390 -04:00 [INF] Executed endpoint 'HTTP: POST /users'
+2024-04-22 20:12:39.390 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users - 200 null null 132.1877ms
+2024-04-22 20:13:22.834 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users - application/json 63
+2024-04-22 20:13:22.834 -04:00 [INF] Executing endpoint 'HTTP: POST /users'
+2024-04-22 20:13:22.835 -04:00 [INF] Handling CreateUserCommand
+2024-04-22 20:13:22.835 -04:00 [INF] Property Email : gusflopes@hublwaw.com.br
+2024-04-22 20:13:22.835 -04:00 [INF] Property Password : Pass
+2024-04-22 20:13:22.850 -04:00 [INF] Handled CreateUserCommand with Ardalis.Result.Result in 13 ms
+2024-04-22 20:13:22.850 -04:00 [INF] Setting HTTP status code 422.
+2024-04-22 20:13:22.851 -04:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-04-22 20:13:22.851 -04:00 [INF] Executed endpoint 'HTTP: POST /users'
+2024-04-22 20:13:22.851 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users - 422 null application/json; charset=utf-8 17.9728ms
+2024-04-22 20:13:29.397 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users - application/json 62
+2024-04-22 20:13:29.398 -04:00 [INF] Executing endpoint 'HTTP: POST /users'
+2024-04-22 20:13:29.402 -04:00 [INF] Handling CreateUserCommand
+2024-04-22 20:13:29.402 -04:00 [INF] Property Email : gusflopes@hublaw.com.br
+2024-04-22 20:13:29.402 -04:00 [INF] Property Password : Pass
+2024-04-22 20:13:29.403 -04:00 [INF] Handled CreateUserCommand with Ardalis.Result.Result in 0 ms
+2024-04-22 20:13:29.403 -04:00 [INF] Setting HTTP status code 422.
+2024-04-22 20:13:29.404 -04:00 [INF] Writing value of type 'ProblemDetails' as Json.
+2024-04-22 20:13:29.404 -04:00 [INF] Executed endpoint 'HTTP: POST /users'
+2024-04-22 20:13:29.404 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users - 422 null application/json; charset=utf-8 7.8469ms
+2024-04-22 20:13:39.291 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users/login - application/json 68
+2024-04-22 20:13:39.292 -04:00 [INF] Executing endpoint 'HTTP: POST /users/login'
+2024-04-22 20:13:39.319 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-04-22 20:13:39.408 -04:00 [INF] Executed endpoint 'HTTP: POST /users/login'
+2024-04-22 20:13:39.408 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/users/login - 200 null application/json 118.0047ms
+2024-04-22 20:21:46.738 -04:00 [INF] Registered 14 endpoints in 715 milliseconds.
+2024-04-22 20:21:46.873 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-22 20:21:46.960 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-22 20:21:46.960 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 20:21:46.960 -04:00 [INF] Hosting environment: Development
+2024-04-22 20:21:46.960 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-22 20:21:47.271 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-22 20:21:47.468 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 199.4985ms
+2024-04-22 20:21:48.025 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-22 20:21:48.044 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-22 20:21:48.477 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 451.7719ms
+2024-04-22 20:21:58.223 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/users - application/json 69
+2024-04-22 20:21:58.226 -04:00 [INF] Executing endpoint 'HTTP: POST /users'
+2024-04-22 20:21:58.291 -04:00 [INF] Handling CreateUserCommand
+2024-04-22 20:21:58.292 -04:00 [INF] Property Email : gusflopes1@hublaw.com.br
+2024-04-22 20:21:58.292 -04:00 [INF] Property Password : Pass@word1
+2024-04-22 20:21:59.301 -04:00 [INF] Executed DbCommand (33ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FullName]
+FROM [Users].[AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'ApplicationUser' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-04-22 20:21:59.434 -04:00 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 21), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users].[AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Discriminator], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2024-04-22 20:21:59.444 -04:00 [INF] Handling SendEmailCommand
+2024-04-22 20:21:59.444 -04:00 [INF] Property To : gusflopes1@hublaw.com.br
+2024-04-22 20:21:59.445 -04:00 [INF] Property From : donotreply@hublaw.app
+2024-04-22 20:21:59.445 -04:00 [INF] Property Subject : Welcome to RiverBooks!
+2024-04-22 20:21:59.445 -04:00 [INF] Property Body : Thank you for registering.
+2024-04-22 20:21:59.473 -04:00 [INF] Attempting to send email to gusflopes1@hublaw.com.br from donotreply@hublaw.app with subject Welcome to RiverBooks!
+2024-04-22 20:21:59.619 -04:00 [INF] Email sent!
