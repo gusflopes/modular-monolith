@@ -41,7 +41,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "Email": "gusflopes@hublaw.com.br",
+  "Email": "gusflopes1@hublaw.com.br",
   "Password": "Pass@word1"
 }
 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace RiverBooks.Users.Infrastructure.Data;
 
-public class UserStreetAddressConfiguration : IEntityTypeConfiguration<UserStreetAddress>
+public class  UserStreetAddressConfiguration : IEntityTypeConfiguration<UserStreetAddress>
 {
   public void Configure(EntityTypeBuilder<UserStreetAddress> builder)
   {

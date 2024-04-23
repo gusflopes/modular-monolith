@@ -190,3 +190,36 @@ WHERE [Id] = @p1;
 2024-04-14 22:50:30.436 -04:00 [INF] Handled AddItemToCartCommand with Ardalis.Result.Result in 1162 ms
 2024-04-14 22:50:30.438 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
 2024-04-14 22:50:30.444 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 200 null null 1280.6622ms
+2024-04-14 23:15:05.051 -04:00 [INF] Registered 14 endpoints in 766 milliseconds.
+2024-04-14 23:15:05.197 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 23:15:05.297 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-14 23:15:05.297 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-14 23:15:05.297 -04:00 [INF] Hosting environment: Development
+2024-04-14 23:15:05.297 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-14 23:15:05.519 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-14 23:15:05.692 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 175.6139ms
+2024-04-14 23:15:06.007 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-14 23:15:06.019 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-14 23:15:06.341 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 334.6359ms
+2024-04-14 23:15:18.544 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7149/cart - application/json 71
+2024-04-14 23:15:18.598 -04:00 [INF] Executing endpoint 'HTTP: POST /cart'
+2024-04-14 23:15:18.684 -04:00 [INF] Handling AddItemToCartCommand
+2024-04-14 23:15:18.685 -04:00 [INF] Property BookId : "741f0053-d934-4868-a890-f40217a5b1c5"
+2024-04-14 23:15:18.685 -04:00 [INF] Property Quantity : 0
+2024-04-14 23:15:18.686 -04:00 [INF] Property EmailAddress : gusflopes@hublaw.com.br
+2024-04-14 23:15:18.712 -04:00 [INF] Handled AddItemToCartCommand with Ardalis.Result.Result in 26 ms
+2024-04-14 23:15:18.761 -04:00 [INF] Setting HTTP status code 400.
+2024-04-14 23:15:18.764 -04:00 [INF] Writing value of type 'ObservableCollection`1' as Json.
+2024-04-14 23:15:18.774 -04:00 [INF] Executed endpoint 'HTTP: POST /cart'
+2024-04-14 23:15:18.775 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7149/cart - 400 null application/json; charset=utf-8 231.2199ms
+2024-04-14 23:34:08.037 -04:00 [INF] Registered 14 endpoints in 658 milliseconds.
+2024-04-14 23:34:08.167 -04:00 [INF] User profile is available. Using 'C:\Users\gusfl\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-14 23:34:08.261 -04:00 [INF] Now listening on: https://localhost:7149
+2024-04-14 23:34:08.261 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-14 23:34:08.261 -04:00 [INF] Hosting environment: Development
+2024-04-14 23:34:08.261 -04:00 [INF] Content root path: C:\Users\gusfl\RiderProjects\ardalis-modular\RiverBooks.Web
+2024-04-14 23:34:08.703 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-04-14 23:34:08.873 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html; charset=utf-8 173.3566ms
+2024-04-14 23:34:09.193 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-04-14 23:34:09.205 -04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-04-14 23:34:09.541 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 348.0412ms
