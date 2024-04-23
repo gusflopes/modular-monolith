@@ -10,11 +10,11 @@ public class ListEmailResponse
   public List<EmailOutboxEntity> Emails { get; internal set; } = new();
 }
 
-internal class ListEmails : EndpointWithoutRequest<ListEmailResponse>
+internal class ListEmailsEndpoint : EndpointWithoutRequest<ListEmailResponse>
 {
   private readonly IMongoCollection<EmailOutboxEntity> _emailCollection;
 
-  public ListEmails(IMongoCollection<EmailOutboxEntity> emailCollection)
+  public ListEmailsEndpoint(IMongoCollection<EmailOutboxEntity> emailCollection)
   {
     _emailCollection = emailCollection;
   }

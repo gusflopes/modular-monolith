@@ -2,7 +2,7 @@
 using MimeKit;
 using MailKit.Net.Smtp;
 
-namespace RiverBooks.EmailSending;
+namespace RiverBooks.EmailSending.EmailBackgroundService;
 
 public class MimeKitEmailSender : ISendEmail
 {

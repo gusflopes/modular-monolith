@@ -2,20 +2,21 @@
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 
-namespace RiverBooks.EmailSending;
+namespace RiverBooks.EmailSending.EmailBackgroundService;
 
 internal interface ISendEmailsFromOutboxService
 {
   Task CheckForAndSendEmails();
 }
+
 internal class DefaultSendEmailsFromOutboxService : ISendEmailsFromOutboxService {
-  private readonly IOutboxService _outboxService;
+  private readonly IGetEmailsFromOutboxService _outboxService;
   private readonly ISendEmail _emailSender;
   private readonly IMongoCollection<EmailOutboxEntity> _emailCollection;
   private readonly ILogger<DefaultSendEmailsFromOutboxService> _logger;
 
   public DefaultSendEmailsFromOutboxService(
-    IOutboxService outboxService,
+    IGetEmailsFromOutboxService outboxService,
     ISendEmail emailSender,
     IMongoCollection<EmailOutboxEntity> emailCollection,
     ILogger<DefaultSendEmailsFromOutboxService> logger)

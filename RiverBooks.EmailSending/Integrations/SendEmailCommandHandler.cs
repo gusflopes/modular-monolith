@@ -1,7 +1,8 @@
 ﻿using Ardalis.Result;
 using RiverBooks.EmailSending.Contracts;
+using RiverBooks.EmailSending.EmailBackgroundService;
 
-namespace RiverBooks.EmailSending;
+namespace RiverBooks.EmailSending.Integrations;
 
 internal class SendEmailCommandHandler // : IRequestHandler<SendEmailCommand, Result<Guid>>
 {

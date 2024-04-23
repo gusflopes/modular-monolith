@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
+using RiverBooks.EmailSending.EmailBackgroundService;
+using RiverBooks.EmailSending.Integrations;
 using ILogger = Serilog.ILogger;
 
 namespace RiverBooks.EmailSending;
@@ -19,7 +21,8 @@ public static class EmailSendingModuleServiceExtensions
 
     // Add Module services
     services.AddTransient<ISendEmail, MimeKitEmailSender>();
-    services.AddTransient<IOutboxService, MongoDbOutboxService>();
+    services.AddTransient<IQueueEmailsInOutboxService, MongoDbQueueEmailOutboxService>();
+    services.AddTransient<IGetEmailsFromOutboxService, MongoDbGetEmailsFromOutboxService>();
     services.AddTransient<ISendEmailsFromOutboxService, DefaultSendEmailsFromOutboxService>();
 
     // if using MediatR in this module, add any assemblies that contain handlers to the host

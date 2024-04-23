@@ -1,20 +1,20 @@
 ﻿using Ardalis.Result;
+using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 
-namespace RiverBooks.EmailSending;
+namespace RiverBooks.EmailSending.EmailBackgroundService;
+internal interface IGetEmailsFromOutboxService
+{
+  Task<Result<EmailOutboxEntity>> GetUnprocessedEmailEntity();
+}
 
-internal class MongoDbOutboxService : IOutboxService
+internal class MongoDbGetEmailsFromOutboxService : IGetEmailsFromOutboxService
 {
   private readonly IMongoCollection<EmailOutboxEntity> _emailCollection;
 
-  public MongoDbOutboxService(IMongoCollection<EmailOutboxEntity> emailCollection)
+  public MongoDbGetEmailsFromOutboxService(IMongoCollection<EmailOutboxEntity> emailCollection)
   {
     _emailCollection = emailCollection;
-  }
-
-  public async Task QueueEmailForSending(EmailOutboxEntity entity)
-  {
-    await _emailCollection.InsertOneAsync(entity);
   }
 
   public async Task<Result<EmailOutboxEntity>> GetUnprocessedEmailEntity()
@@ -30,3 +30,4 @@ internal class MongoDbOutboxService : IOutboxService
     return unsentEmailEntity;
   }
 }
+
