@@ -2,14 +2,18 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using RiverBooks.OrderProcessing.Domain;
+using RiverBooks.SharedKernel;
 
 namespace RiverBooks.OrderProcessing.Infrastructure.Data;
 
 internal class OrderProcessingDbContext : IdentityDbContext
 {
-  public OrderProcessingDbContext(DbContextOptions<OrderProcessingDbContext> options)
+  private readonly IDomainEventDispatcher? _dispatcher;
+
+  public OrderProcessingDbContext(DbContextOptions<OrderProcessingDbContext> options, IDomainEventDispatcher? dispatcher)
     : base(options)
   {
+    _dispatcher = dispatcher;
   }
 
   public DbSet<Order> Orders { get; set; }
@@ -28,5 +32,28 @@ internal class OrderProcessingDbContext : IdentityDbContext
   {
     configurationBuilder.Properties<decimal>()
       .HavePrecision(18, 6);
+  }
+  
+  /// <summary>
+  /// Dispatches domain events to MediatR after SaveChanges is called.
+  /// </summary>
+  /// <param name="cancellationToken"></param>
+  /// <returns></returns>
+  public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+  {
+    int result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+    
+    // ignore events if no dispatcher provided
+    if (_dispatcher == null) return result;
+    
+    // dispatch events only if save was successful
+    var entitiesWithEvents = ChangeTracker.Entries<IHaveDomainEvents>()
+      .Select(e => e.Entity)
+      .Where(e => e.DomainEvents.Any())
+      .ToArray();
+
+    await _dispatcher.DispatchAndClearEvents(entitiesWithEvents);
+
+    return result;
   }
 }
